@@ -10,6 +10,7 @@ import { RolesComponent } from './roles/roles.component';
 import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recuperacion-contrasena.component';
 import { CrearRolComponent } from './crear-rol/crear-rol.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
     RecuperacionContrasenaComponent,
     CrearRolComponent,
     FooterComponent,
-    UsuarioComponent],
+    UsuarioComponent,
+    CrearUsuarioComponent],
     
   imports: [BrowserModule],
   providers: [],
