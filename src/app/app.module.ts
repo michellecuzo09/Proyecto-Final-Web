@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RolesComponent } from './roles/roles.component';
 import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recuperacion-contrasena.component';
+import { CrearRolComponent } from './crear-rol/crear-rol.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'Header', component: HeaderComponent },
+  { path: 'crear:rol', component: CrearRolComponent },
 
   { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
 ];
@@ -27,6 +29,7 @@ const routes: Routes = [
     HeaderComponent,
     RolesComponent,
     RecuperacionContrasenaComponent,
+    CrearRolComponent,
     FooterComponent],
   imports: [BrowserModule],
   providers: [],
