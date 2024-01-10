@@ -12,13 +12,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // Redirige a la página sistema-administrativo al iniciar el componente
-    this.router.navigate(['/header']);
+    this.router.navigate(['/sistema_administrativo']);
   }
 
   redirectToSistemaAdministrativo() {
     // Redirige a la ruta '/sistema-administrativo'
     console.log("Redirigiendo a sistema-administrativo");
-    this.router.navigate(['/sistema-header']);
+    this.router.navigate(['/sistema-administrativo']);
   
   }
 }
