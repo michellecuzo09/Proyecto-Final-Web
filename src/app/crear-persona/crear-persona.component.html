@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-persona.component.css">
+    <title>Crear Persona</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+
+    <div class="form-container">
+        <h2>Crear Persona</h2>
+        <form id="create-person-form">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required>
+
+            <label for="primerNombre">Primer Nombre:</label>
+            <input type="text" id="primerNombre" name="primerNombre" required>
+
+            <label for="segundoNombre">Segundo Nombre:</label>
+            <input type="text" id="segundoNombre" name="segundoNombre">
+
+            <label for="apellidoPaterno">Apellido Paterno:</label>
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+
+            <label for="apellidoMaterno">Apellido Materno:</label>
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button class="button" routerLink="/añadir ruta">crear</button>
+            <button class="btn2" routerLink="/persona">Cancelar</button>
+
+        </form>
+    </div>
+
+</body>
+<app-footer></app-footer>
+</html>

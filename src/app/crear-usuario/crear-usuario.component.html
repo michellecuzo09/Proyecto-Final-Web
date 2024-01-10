@@ -19,10 +19,22 @@
             <input type="password" id="password" name="password" required>
 
             <label for="personId">ID Persona:</label>
-            <input type="text" id="personId" name="personId" required>
+            <select id="personId" name="personId" required>
+                <!-- Opciones para ID Persona -->
+                <option value="1">Persona 1</option>
+                <option value="2">Persona 2</option>
+                <option value="3">Persona 3</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
 
             <label for="roleId">ID Rol:</label>
-            <input type="text" id="roleId" name="roleId" required>
+            <select id="roleId" name="roleId" required>
+                <!-- Opciones para ID Rol -->
+                <option value="1">Rol 1</option>
+                <option value="2">Rol 2</option>
+                <option value="3">Rol 3</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
 
             <div class="button-container">
                 <button type="submit" class="create-button">Crear</button>
@@ -32,5 +44,4 @@
     </div>
 </body>
 <app-footer></app-footer>
-
 </html>

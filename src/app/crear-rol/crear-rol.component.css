@@ -29,7 +29,7 @@ body {
   margin-right: 30px;
   border: 0;
 }
-.button1 {
+.btn1 {
   background-color: #46adfa;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -37,13 +37,13 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.button2 {
+.btn2{
   background-color: #e70027;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 .inputs input {
   width: 300px;
@@ -100,14 +100,20 @@ tbody {
   padding: 8px;
   margin-bottom: 30px;
 }
-.btn {
-  width: 130px;
+.btn1 {
+  width: 120px;
   padding: 8px;
   margin-bottom: 10px;
 }
 .btn1 {
-  margin-right: 58px;
+  margin-right: 28px;
 }
+.btn2 {
+  width: 160px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
 .texto_formulario {
   text-align: center;
 }

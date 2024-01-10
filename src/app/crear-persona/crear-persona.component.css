@@ -24,40 +24,47 @@ form {
     flex-direction: column;
 }
 
+.label-container,
+.input-container,
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px; /* Ajuste de margen entre líneas */
+}
+
 label {
     margin-bottom: 8px;
 }
 
-input,
-select {
+input {
     padding: 8px;
     margin-bottom: 16px;
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-}
-
-.create-button,
-.cancel-button {
+button {
     flex: 1; /* El botón ocupa todo el espacio disponible */
-    padding: 8px;
+    background-color: #46adfa;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-}
-
-.create-button {
-    background-color: #46adfa;
     margin-right: 5px; /* Ajuste de margen entre botones */
 }
 
-.cancel-button {
+.btn2 {
+    flex: 1; /* El botón ocupa todo el espacio disponible */
     background-color: #e70027;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     margin-left: 5px; /* Ajuste de margen entre botones */
+}
+
+.button,
+.btn2 {
+    padding: 8px;
+    margin-bottom: 10px;
 }

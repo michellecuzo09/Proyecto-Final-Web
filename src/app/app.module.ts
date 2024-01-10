@@ -14,6 +14,7 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { MenudespComponent } from './menudesp/menudesp.component';
 import { PeriodosComponent } from './periodos/periodos.component';
 import { PersonaComponent } from './persona/persona.component';
+import { CrearPersonaComponent } from './crear-persona/crear-persona.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'menud', component: MenudespComponent },
   { path: 'crearUsuario', component: CrearUsuarioComponent },
   { path: 'persona', component: PersonaComponent },
+  { path: 'crearpersona', component: CrearPersonaComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -46,6 +48,7 @@ const routes: Routes = [
     MenudespComponent,
     CrearUsuarioComponent,
     PersonaComponent,
+    CrearPersonaComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
