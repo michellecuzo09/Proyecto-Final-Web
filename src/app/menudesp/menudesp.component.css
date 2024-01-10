@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+}
+
+.menu-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    display: none;
+    background-color: #333;
+    position: absolute;
+    top: 100%; /* Cambiado a 100% para que se despliegue hacia abajo */
+    left: 0; /* Cambiado a 0 para que se alinee con el borde del botón */
+    width: 150px; /* Ajusta el ancho según sea necesario */
+}
+
+.menu-item {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu-item:hover {
+    background-color: #555;
+}
+
+.menu-container:hover .menu-list {
+    display: flex;
+    flex-direction: column;
+}

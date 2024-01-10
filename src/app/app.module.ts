@@ -11,6 +11,7 @@ import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recup
 import { CrearRolComponent } from './crear-rol/crear-rol.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { MenudespComponent } from './menudesp/menudesp.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'Header', component: HeaderComponent },
   { path: 'crear-rol', component: CrearRolComponent },
   { path: 'usuario', component: UsuarioComponent },
+  { path: 'menud', component: MenudespComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -38,6 +40,7 @@ const routes: Routes = [
     FooterComponent,
     UsuarioComponent,
     CrearUsuarioComponent,
+    MenudespComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
