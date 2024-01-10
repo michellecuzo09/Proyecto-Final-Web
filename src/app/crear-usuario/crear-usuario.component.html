@@ -1,1 +1,36 @@
-<p>crear-usuario works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-usuario.component.css">
+    <title>Crear Usuario</title>
+</head>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="form-container">
+        <h2>Crear Usuario</h2>
+        <form id="create-user-form">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="personId">ID Persona:</label>
+            <input type="text" id="personId" name="personId" required>
+
+            <label for="roleId">ID Rol:</label>
+            <input type="text" id="roleId" name="roleId" required>
+
+            <div class="button-container">
+                <button type="submit" class="create-button">Crear</button>
+                <button type="button" class="cancel-button">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+
+</html>

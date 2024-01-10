@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'crear-rol', component: CrearRolComponent },
   { path: 'usuario', component: UsuarioComponent },
   { path: 'menud', component: MenudespComponent },
+  { path: 'crearUsuario', component: CrearUsuarioComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -41,6 +42,7 @@ const routes: Routes = [
     UsuarioComponent,
     CrearUsuarioComponent,
     MenudespComponent,
+    CrearUsuarioComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
