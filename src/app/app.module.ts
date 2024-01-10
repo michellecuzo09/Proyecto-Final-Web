@@ -15,9 +15,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent,
-    HeaderComponent,
+  declarations: [
+    AppComponent,
     LoginComponent,
+    HeaderComponent,
     FooterComponent],
   imports: [BrowserModule],
   providers: [],
