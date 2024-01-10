@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'Header', component: HeaderComponent },
-  { path: 'crear:rol', component: CrearRolComponent },
+  { path: 'crear-rol', component: CrearRolComponent },
   { path: 'usuario', component: UsuarioComponent },
 
   {
@@ -38,10 +38,9 @@ const routes: Routes = [
     FooterComponent,
     UsuarioComponent,
     CrearUsuarioComponent,
-    
   ],
 
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
