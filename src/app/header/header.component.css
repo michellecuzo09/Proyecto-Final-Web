@@ -1,0 +1,18 @@
+/* .btn {
+  margin-left: 900px;
+} */
+.navbar {
+  width: 100%;
+  padding: 6px 100px;
+  background-color: #46adfa;
+}
+.navbar-collapse {
+  /* color: white; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 220px;
+}
+.navbar-nav {
+  margin-right: 220px;
+}
