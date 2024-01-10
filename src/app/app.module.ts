@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'roles', component: RolesComponent },
   { path: 'Header', component: HeaderComponent },
   { path: 'crear:rol', component: CrearRolComponent },
-  { path: 'usuario', component: CrearRolComponent },
+  { path: 'usuario', component: UsuarioComponent },
 
   { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
 ];
@@ -31,7 +31,9 @@ const routes: Routes = [
     RolesComponent,
     RecuperacionContrasenaComponent,
     CrearRolComponent,
-    FooterComponent],
+    FooterComponent,
+    UsuarioComponent],
+    
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
