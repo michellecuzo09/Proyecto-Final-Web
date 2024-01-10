@@ -20,7 +20,10 @@ const routes: Routes = [
   { path: 'crear:rol', component: CrearRolComponent },
   { path: 'usuario', component: UsuarioComponent },
 
-  { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
+  {
+    path: 'recuperacion-contrasena',
+    component: RecuperacionContrasenaComponent,
+  },
 ];
 
 @NgModule({
@@ -32,8 +35,9 @@ const routes: Routes = [
     RecuperacionContrasenaComponent,
     CrearRolComponent,
     FooterComponent,
-    UsuarioComponent],
-    
+    UsuarioComponent,
+  ],
+
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
