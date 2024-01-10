@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RolesComponent } from './roles/roles.component';
+import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recuperacion-contrasena.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'roles', component: RolesComponent },
+  { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
 ];
 
 @NgModule({
@@ -22,6 +24,7 @@ const routes: Routes = [
     LoginComponent,
     HeaderComponent,
     RolesComponent,
+    RecuperacionContrasenaComponent,
     FooterComponent],
   imports: [BrowserModule],
   providers: [],
