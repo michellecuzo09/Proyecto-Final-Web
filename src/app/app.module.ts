@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'roles', component: RolesComponent },
+  { path: 'Header', component: HeaderComponent },
+
   { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
 ];
 
