@@ -1,1 +1,52 @@
-<p>persona works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Personas</title>
+  <link rel="stylesheet" href="persona.component.css">
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+
+  <h2>Lista de Personas</h2>
+  <div class="button-container">  <!-- Botones -->
+    <button class="button1" routerLink="/crearPersona">Crear Persona</button>
+    <button onclick="modificarPersona()">Modificar Persona</button>
+    <button onclick="eliminarPersona()">Eliminar Persona</button>
+  </div>
+
+  <table class="persona-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cédula</th>
+        <th>Primer Nombre</th>
+        <th>Segundo Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <!-- Puedes agregar más columnas según tus necesidades -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí irán las filas de la tabla con datos de personas -->
+      <tr>
+        <td>1</td>
+        <td>123456789</td>
+        <td>Juan</td>
+        <td>Pablo</td>
+        <td>Gomez</td>
+        <td>Perez</td>
+        <td>123-456-7890</td>
+        <td>juan@example.com</td>
+        <!-- Puedes agregar más celdas con datos de personas -->
+      </tr>
+      <!-- Puedes agregar más filas según tus necesidades -->
+    </tbody>
+  </table>
+</body>
+<app-footer></app-footer>
+</html>
