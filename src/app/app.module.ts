@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RolesComponent } from './roles/roles.component';
 import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recuperacion-contrasena.component';
 import { CrearRolComponent } from './crear-rol/crear-rol.component';
-
+import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'roles', component: RolesComponent },
   { path: 'Header', component: HeaderComponent },
   { path: 'crear:rol', component: CrearRolComponent },
+  { path: 'usuario', component: CrearRolComponent },
 
   { path: 'recuperacion-contrasena', component: RecuperacionContrasenaComponent },
 ];
