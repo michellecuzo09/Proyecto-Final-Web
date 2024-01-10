@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RolesComponent } from './roles/roles.component';
+import { CrearRolComponent } from './crear-rol/crear-rol.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
     LoginComponent,
     HeaderComponent,
     RolesComponent,
-    FooterComponent],
+    FooterComponent,
+    CrearRolComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
