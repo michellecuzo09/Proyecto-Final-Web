@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { RolesComponent } from './roles/roles.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'roles', component: RolesComponent },
 ];
 
 @NgModule({
@@ -19,6 +21,7 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     HeaderComponent,
+    RolesComponent,
     FooterComponent],
   imports: [BrowserModule],
   providers: [],
