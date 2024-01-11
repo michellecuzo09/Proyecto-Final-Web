@@ -9,13 +9,16 @@ body {
     display: flex;
     align-items: center;
     background-color: #46adfa;
+    padding: 5px;
+    width: 150px; 
+
 }
 
 .menu-button {
     background-color: #46adfa;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
 }
 
@@ -25,9 +28,9 @@ body {
     display: none;
     background-color: #46adfa;
     position: absolute;
-    top: 100%; /* Cambiado a 100% para que se despliegue hacia abajo */
-    left: 0; /* Cambiado a 0 para que se alinee con el borde del botón */
-    width: auto; /* Ajusta el ancho según sea necesario */
+    top: 100%;
+    left: 0;
+    width: auto;
 }
 
 .menu-item {
@@ -38,7 +41,7 @@ body {
 }
 
 .menu-item:hover {
-    background-color: #555;
+    background-color: #ccc;
 }
 
 .menu-container:hover .menu-list {
