@@ -37,6 +37,9 @@ import { CrearAsignaturaComponent } from './crear-asignatura/crear-asignatura.co
 import { ActividadesDocenteComponent } from './actividades-docente/actividades-docente.component';
 import { ActividadesNoDocenteComponent } from './actividades-no-docente/actividades-no-docente.component';
 import { ExtraActividadesComponent } from './extra-actividades/extra-actividades.component';
+import { ListarActividadesDocentesComponent } from './listar-actividades-docentes/listar-actividades-docentes.component';
+import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-docentes/listar-actividades-no-docentes.component';
+import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -118,6 +121,9 @@ const routes: Routes = [
     ActividadesDocenteComponent,
     ActividadesNoDocenteComponent,
     ExtraActividadesComponent,
+    ListarActividadesDocentesComponent,
+    ListarActividadesNoDocentesComponent,
+    ListarExtraActividadesComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
