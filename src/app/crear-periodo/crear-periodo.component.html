@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-periodo.component.css">
+    <title>Formulario de Período</title>
+</head>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="form-container">
+        <h2>Crear Nuevo Período</h2>
+        <form id="create-periodo-form">
+            <label for="mesInicio">Mes de Inicio:</label>
+            <input type="text" id="mesInicio" name="mesInicio" required>
+
+            <label for="mesFin">Mes de Fin:</label>
+            <input type="text" id="mesFin" name="mesFin" required>
+
+            <label for="anoInicio">Año de Inicio:</label>
+            <input type="text" id="anoInicio" name="anoInicio" required>
+
+            <label for="anoFin">Año de Fin:</label>
+            <input type="text" id="anoFin" name="anoFin" required>
+
+            <div class="button-container">
+                <button type="submit" class="create-button">Crear</button>
+                <button  class="cancel-button" routerLink="/periodo">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>
