@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-grado-ocupacional.component.css">
+    <title>Formulario de Grado Ocupacional</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="formulario-container">
+        <h2>Formulario de Grado Ocupacional</h2>
+        <form id="grado-form">
+            <label for="gradoTitulo">Título de Grado:</label>
+            <input type="text" id="gradoTitulo" name="gradoTitulo" required>
+
+            <label for="gradoTipoSalario">Tipo de Salario:</label>
+            <input type="text" id="gradoTipoSalario" name="gradoTipoSalario" required>
+
+            <div class="acciones-container">
+                <button type="submit" class="crear-button">Crear</button>
+                <button  class="cancelar-button" routerLink="/gradoOcu">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>

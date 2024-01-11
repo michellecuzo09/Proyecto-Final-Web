@@ -1,1 +1,42 @@
-<p>tipo-contrato works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tipo-contrato.component.css">
+    <title>Título</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+    
+       
+    
+    <div class="titulo-container">
+        <button  class="crear-button" routerLink="/crearcontrato">crear</button>
+        <button class="eliminar-button">Eliminar</button>
+        <h2>Lista de Títulos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo ID</th>
+                    <th>Tipo Contrato</th>
+                    <th>Tipo Horas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irán las filas de la tabla con datos de títulos -->
+                <tr>
+                    <td>1</td>
+                    <td>Contrato A</td>
+                    <td>40</td>
+                   
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
+
+</html>

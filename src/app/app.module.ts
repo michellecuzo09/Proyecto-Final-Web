@@ -15,6 +15,12 @@ import { MenudespComponent } from './menudesp/menudesp.component';
 import { PeriodosComponent } from './periodos/periodos.component';
 import { PersonaComponent } from './persona/persona.component';
 import { CrearPersonaComponent } from './crear-persona/crear-persona.component';
+import { TituloComponent } from './titulo/titulo.component';
+import { CrearTituloComponent } from './crear-titulo/crear-titulo.component';
+import { TipoContratoComponent } from './tipo-contrato/tipo-contrato.component';
+import { CrearTipoContratoComponent } from './crear-tipo-contrato/crear-tipo-contrato.component';
+import { GradoOcupacionalComponent } from './grado-ocupacional/grado-ocupacional.component';
+import { CrearGradoOcupacionalComponent } from './crear-grado-ocupacional/crear-grado-ocupacional.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -27,11 +33,18 @@ const routes: Routes = [
   { path: 'crearUsuario', component: CrearUsuarioComponent },
   { path: 'persona', component: PersonaComponent },
   { path: 'crearpersona', component: CrearPersonaComponent },
+{path:'titulo',component:TituloComponent},
+{ path: 'tipocontrato', component: TipoContratoComponent },
+{ path: 'crearcontrato', component: CrearTipoContratoComponent },
 
   {
     path: 'recuperacion-contrasena',
     component: RecuperacionContrasenaComponent,
   },
+  { path: 'creartitulo', component: CrearTituloComponent },
+{path:'gradoOcu',component:GradoOcupacionalComponent},
+{path:'creargrado',component:CrearGradoOcupacionalComponent},
+
 ];
 
 @NgModule({
@@ -49,6 +62,12 @@ const routes: Routes = [
     CrearUsuarioComponent,
     PersonaComponent,
     CrearPersonaComponent,
+    TituloComponent,
+    CrearTituloComponent,
+    TipoContratoComponent,
+    CrearTipoContratoComponent,
+  GradoOcupacionalComponent,
+  CrearGradoOcupacionalComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],

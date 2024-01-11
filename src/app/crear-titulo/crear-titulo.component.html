@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-titulo.component.css">
+    <title>Formulario de Título</title>
+</head>
+<body>
+    <div class="formulario-container">
+        <h2>Formulario de Título</h2>
+        <form id="titulo-form">
+            <label for="idTitulo">ID Título:</label>
+            <input type="text" id="idTitulo" name="idTitulo" required>
+
+            <label for="nombreTitulo">Nombre Título:</label>
+            <input type="text" id="nombreTitulo" name="nombreTitulo" required>
+
+            <div class="acciones-container">
+                <button type="submit" class="crear-button">Crear</button>
+                <button class="cancelar-button" routerLink="/titulo">Cancelar</button>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

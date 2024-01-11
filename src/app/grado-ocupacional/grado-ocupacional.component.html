@@ -1,1 +1,40 @@
-<p>grado-ocupacional works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grado-ocupacional.component.css">
+    <title>Grado Ocupacional</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+
+<body>
+    <div class="grado-container">
+  
+        <h2>Lista de Grados Ocupacionales</h2>
+         <button class="crear-button" routerLink="/creargrado">Crear</button>
+                        <button class="eliminar-button">Eliminar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Grado ID</th>
+                    <th>Grado Título</th>
+                    <th>Grado Tipo Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irán las filas de la tabla con datos de grados ocupacionales -->
+                <tr>
+                    <td>1</td>
+                    <td>Grado A</td>
+                    <td>Sueldo Mensual</td>
+                       
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>

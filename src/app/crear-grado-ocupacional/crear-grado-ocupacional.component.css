@@ -5,8 +5,8 @@ body {
     background-color: #f4f4f4;
 }
 
-.titulo-container {
-    max-width: 600px;
+.formulario-container {
+    max-width: 400px;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -19,17 +19,18 @@ h2 {
     color: #333;
 }
 
-table {
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-    border: 1px solid #ddd;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-th,
-td {
-    border: 1px solid #ddd;
-    padding: 10px;
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
 }
 
 .acciones-container {
@@ -38,20 +39,22 @@ td {
 }
 
 .crear-button,
-.eliminar-button {
-    width: 48%; /* Se deja espacio para un pequeño margen entre los botones */
+.cancelar-button {
+    flex: 1;
     padding: 8px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 10px;
 }
 
 .crear-button {
-    background-color: #46adfa; /* Verde */
+    background-color: #46adfa; /* Azul */
     color: #fff;
+    margin-right: 5px;
 }
 
-.eliminar-button {
+.cancelar-button {
     background-color: #e70027; /* Rojo */
     color: #fff;
+    margin-left: 5px;
 }

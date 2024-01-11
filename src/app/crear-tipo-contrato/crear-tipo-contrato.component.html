@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crear-tipo-contrato.component.css">
+    <title>Formulario de Tipo de Contrato</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="formulario-container">
+        <h2>Formulario de Tipo de Contrato</h2>
+        <form id="tipo-contrato-form">
+            <label for="tipoContratoId">ID Tipo Contrato:</label>
+            <input type="text" id="tipoContratoId" name="tipoContratoId" required>
+
+            <label for="nombreTipoContrato">Nombre Tipo Contrato:</label>
+            <input type="text" id="nombreTipoContrato" name="nombreTipoContrato" required>
+
+            <label for="horasContrato">Horas Contrato:</label>
+            <input type="text" id="horasContrato" name="horasContrato" required>
+
+            <div class="acciones-container">
+                <button type="submit" class="crear-button">Crear</button>
+
+                <button class="cancelar-button" routerLink="/tipocontrato">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>

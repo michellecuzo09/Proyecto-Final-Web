@@ -1,1 +1,39 @@
-<p>titulo works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="titulo.component.css">
+    <title>Titulo</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="titulo-container">
+        <h2>Lista de Títulos</h2>
+        <button class="crear-button" routerLink="/creartitulo">crear</button>
+
+        <button class="eliminar-button">Eliminar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Título</th>
+                    <th>Nombre Título</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irán las filas de la tabla con datos de títulos -->
+                <tr>
+                    <td>1</td>
+                    <td>Título 1</td>
+                    
+                       
+                    
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>
