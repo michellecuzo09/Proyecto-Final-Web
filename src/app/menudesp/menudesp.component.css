@@ -10,8 +10,7 @@ body {
     align-items: center;
     background-color: #46adfa;
     padding: 5px;
-    width: 150px; 
-
+    width: 150px;
 }
 
 .menu-button {
@@ -31,6 +30,8 @@ body {
     top: 100%;
     left: 0;
     width: auto;
+    max-height: 455px; /* Altura máxima para el menú antes de agregar scroll */
+    overflow-y: auto; /* Agrega scroll vertical si el contenido excede la altura máxima */
 }
 
 .menu-item {

@@ -9,11 +9,18 @@
 <app-header></app-header>
 <app-menudesp></app-menudesp>
 <body>
-    <div class="titulo-container">
-        <h2>Lista de Títulos</h2>
-        <button class="crear-button" routerLink="/creartitulo">crear</button>
+    <h2>Lista de Títulos</h2>
+   
+   
 
-        <button class="eliminar-button">Eliminar</button>
+    <div class="titulo-container">
+        <div class="button-container">
+
+            <button class="crear-button" routerLink="/creartitulo">crear</button>
+    
+            <button class="eliminar-button">Eliminar</button>
+            <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
+        </div>
         <table>
             <thead>
                 <tr>
