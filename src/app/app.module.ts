@@ -28,6 +28,7 @@ import { CrearPeriodoComponent } from './crear-periodo/crear-periodo.component';
 import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 import { CrearCursoComponent } from './crear-curso/crear-curso.component';
+import { CrearCarreraComponent } from './crear-carrera/crear-carrera.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -90,6 +91,7 @@ const routes: Routes = [
     ListarJornadaComponent,
     ListarCursoComponent,
     CrearCursoComponent,
+    CrearCarreraComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
