@@ -1,1 +1,39 @@
-<p>extra-actividades works!</p>
+<div>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+  
+    <body>
+      <div class="panel">
+        <h2 class="txt-2">Extra Actividades Docentes</h2>
+  
+        <form>
+          <div>
+            <label for="nombreProyecto">Nombre Proyecto Vinculación:</label>
+            <input type="text" id="nombreProyecto" name="nombreProyecto" required autocomplete="off">
+          </div>
+  
+          <div>
+            <label for="horasInvestigacion">Horas Investigación:</label>
+            <input type="number" id="horasInvestigacion" name="horasInvestigacion" placeholder="Ingrese las horas de Investigación">
+          </div>
+  
+          <div>
+            <label for="gestionAcademica">Gestión Académica:</label>
+            <input type="text" id="gestionAcademica" name="gestionAcademica" placeholder="Ingrese Detalles de la Gestión">
+          </div>
+  
+          <div>
+            <label for="gestionAcademicaSemanal">Gestión Académica Semanal:</label>
+            <input type="number" id="gestionAcademicaSemanal" name="gestionAcademicaSemanal" placeholder="Ingrese Horas de Gestión Semanal">
+          </div>
+          <div>
+            <button type="submit">Enviar</button>
+            <button type="button" class="cancel" routerLink="/seleccion-actividades">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </body>
+  
+    <app-footer></app-footer>
+  </div>
+  
