@@ -40,6 +40,7 @@ import { ExtraActividadesComponent } from './extra-actividades/extra-actividades
 import { ListarActividadesDocentesComponent } from './listar-actividades-docentes/listar-actividades-docentes.component';
 import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-docentes/listar-actividades-no-docentes.component';
 import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
+import { DocenteComponent } from './docente/docente.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -73,6 +74,7 @@ const routes: Routes = [
   { path: 'creartitulo', component: CrearTituloComponent },
   { path: 'gradoOcu', component: GradoOcupacionalComponent },
   { path: 'creargrado', component: CrearGradoOcupacionalComponent },
+  { path: 'docente', component: DocenteComponent },
 
   { path: 'seleccion-actividad', component: SeleccionActividadComponent },
   { path: 'asignatura', component: AsignaturaComponent },
@@ -127,6 +129,7 @@ const routes: Routes = [
     ListarActividadesDocentesComponent,
     ListarActividadesNoDocentesComponent,
     ListarExtraActividadesComponent,
+    DocenteComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
