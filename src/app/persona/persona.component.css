@@ -12,19 +12,26 @@ h2 {
 
 .button-container {
     display: flex;
-    justify-content: space-around;
+    
     margin-bottom: 20px;
 }
 
 .button1 {
-    background-color: #4caf50; /* Verde */
+    background-color: #46adfa ; /* Verde */
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 4px;
 }
-
+.button2 {
+    background-color: #e70027  ; /* Verde */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
 .persona-table {
     width: 80%;
     margin: 0 auto;
@@ -38,7 +45,7 @@ h2 {
 }
 
 .persona-table th {
-    background-color: #f2f2f2;
+    background-color: #46adfa;
     color: #333;
 }
 

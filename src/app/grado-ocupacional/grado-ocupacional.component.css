@@ -25,7 +25,9 @@ table {
     text-align: center;
     border: 1px solid #ddd;
 }
-
+th {
+    background-color: #46adfa;
+  }
 th,
 td {
     border: 1px solid #ddd;

@@ -28,18 +28,30 @@ body {
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: #46adfa;
   }
-  
+  .button1,
+.button2 {
+    width: 80px; /* Ajusta el ancho según sea necesario */
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button1 {
+    background-color: #46adfa; /* Verde */
+    color: #fff;
+}
+
+.button2 {
+    background-color: #e70027; /* Rojo */
+    color: #fff;
+}
+
   .button-container {
     display: flex;
-    justify-content: center;
     margin-top: 10px;
   }
   
-  button {
-    padding: 8px;
-    margin: 5px;
-    white-space: nowrap; /* Corregido sin caracteres extraños */
-  }
-  
+ 
