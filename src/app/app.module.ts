@@ -42,6 +42,7 @@ const routes: Routes = [
   { path: 'cargo', component: CargoComponent },
   { path: 'crearcargo', component: CrearCargoComponent },
   { path: 'crearjornada', component: CrearJornadaComponent },
+  { path: 'periodo', component: PeriodosComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -76,6 +77,7 @@ const routes: Routes = [
     CargoComponent,
     CrearCargoComponent,
     CrearJornadaComponent,
+    PeriodosComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],

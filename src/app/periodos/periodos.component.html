@@ -1,1 +1,44 @@
-<p>periodos works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="periodos.component.css">
+    <title>Periodos</title>
+</head>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="button-container">
+        <button class="create-button">Crear</button>
+        <button class="delete-button">Eliminar</button>
+    </div>
+
+    <div class="table-container">
+        <h2>Periodos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Periodo ID</th>
+                    <th>Mes Inicio</th>
+                    <th>Mes Fin</th>
+                    <th>Año Inicio</th>
+                    <th>Año Fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se cargarán los datos de la tabla -->
+                <tr>
+                    <td>1</td>
+                    <td>Enero</td>
+                    <td>Febrero</td>
+                    <td>2022</td>
+                    <td>2023</td>
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>
