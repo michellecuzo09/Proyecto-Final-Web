@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -8,11 +8,11 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: #333;
+    background-color: #46adfa;
 }
 
 .menu-button {
-    background-color: #333;
+    background-color: #46adfa;
     color: #fff;
     border: none;
     padding: 10px;
@@ -23,11 +23,11 @@ body {
     list-style: none;
     padding: 0;
     display: none;
-    background-color: #333;
+    background-color: #46adfa;
     position: absolute;
     top: 100%; /* Cambiado a 100% para que se despliegue hacia abajo */
     left: 0; /* Cambiado a 0 para que se alinee con el borde del botón */
-    width: 150px; /* Ajusta el ancho según sea necesario */
+    width: auto; /* Ajusta el ancho según sea necesario */
 }
 
 .menu-item {

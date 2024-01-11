@@ -1,19 +1,21 @@
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-/* footer */
-.texto_footer {
-  width: 100%;
-  height: 50px;
-  background-color: #46adfa;
-  padding: 5px 0;
-  text-align: center;
-  color: black;
-}
-.texto-1 {
-  font-size: 12px;
-  padding: 0;
+/* Estilos generales */
+body {
   margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color:#46adfa; /* Color de fondo del pie de página */
+  color: #fff; /* Color del texto en el pie de página */
+  text-align: center;
+  padding: 20px;
+}
+
+.texto_footer {
+  font-family: 'Avenir', 'Avenir Next', sans-serif;
+}
+
+.texto-1 {
+  margin: 0;
+  font-size: 16px;
 }

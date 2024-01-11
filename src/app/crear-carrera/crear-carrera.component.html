@@ -1,1 +1,35 @@
-<p>crear-carrera works!</p>
+<app-header></app-header>
+    <app-menudesp></app-menudesp>
+<body>
+    <div class="panel">
+        <p class="txt-2">Panel Crear Carrera</p>
+
+        <div class="input-container">
+            <input type="text" class="box" placeholder="Nombre de la Carrera" />
+        </div>
+
+        <div class="input-container input-arrow">
+            <label for="modalidad" class="dropdown-btn">Seleccione Modalidad</label>
+            <div id="modalidadDropdown" class="dropdown-content">
+                <option value="modalidad1">Modalidad 1</option>
+            </div>
+        </div>
+        <div class="input-container input-arrow">
+            <label for="curso" class="dropdown-btn">Seleccione un Curso</label>
+            <div id="cursoDropdown" class="dropdown-content">
+                <option value="curso1">Curso 1</option>
+            </div>
+        </div>
+        <div class="input-container input-arrow">
+            <label for="jornada" class="dropdown-btn">Seleccione Jornada</label>
+            <div id="jornadaDropdown" class="dropdown-content">
+                <option value="jornada1">Jornada 1</option>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="crear-materia">Crear Carrera</button>
+            <button id="cancelar">Cancelar</button>
+        </div>
+    </div>
+</body>
+<app-footer></app-footer>

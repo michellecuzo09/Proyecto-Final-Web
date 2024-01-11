@@ -29,6 +29,8 @@ import { ListarJornadaComponent } from './listar-jornada/listar-jornada.componen
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 import { CrearCarreraComponent } from './crear-carrera/crear-carrera.component';
+import { CarreraComponent } from './carrera/carrera.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -52,11 +54,9 @@ const routes: Routes = [
   { path: 'listarjornada', component: ListarJornadaComponent },
   { path: 'listarcurso', component: ListarCursoComponent },
   { path: 'crearcurso', component: CrearCursoComponent },
-
-  {
-    path: 'recuperacion-contrasena',
-    component: RecuperacionContrasenaComponent,
-  },
+  { path: 'crear-carrera', component: CrearCarreraComponent },
+  { path: 'carrera', component: CarreraComponent },
+  {path: 'recuperacion-contrasena',component: RecuperacionContrasenaComponent},
   { path: 'creartitulo', component: CrearTituloComponent },
   { path: 'gradoOcu', component: GradoOcupacionalComponent },
   { path: 'creargrado', component: CrearGradoOcupacionalComponent },
@@ -92,6 +92,7 @@ const routes: Routes = [
     ListarCursoComponent,
     CrearCursoComponent,
     CrearCarreraComponent,
+    CarreraComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
