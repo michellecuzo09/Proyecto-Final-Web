@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="login.component.css" />
+  <meta charset="utf-8">
+  <title>Iniciar Sesión</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.component.css">
+  <meta name="robots" content="noindex, follow">
 </head>
+
 <body>
-  <div class="container">
-    <div class="info">
-      <p class="txt-1"></p>
-    </div>
-    <form class="form" (submit)="redirectToSistemaAdministrativo()">
-      <h2>Bienvenido</h2>
-
-      <p class="txt-2">Sistema Gestion Administrativa</p>
-      <div class="inputs">
-        <input type="email" class="box" placeholder="Ingresa tu correo" />
-        <input type="password" class="box" placeholder="Ingresa tu contraseña" />
-        <a routerLink="/persona">Iniciar Sesión</a>
-
-        <a routerLink="/recuperacion-contrasena">¿Olvidaste tu Contraseña?</a>
+  <div class="wrapper">
+    <div class="inner">
+      <div class="image-holder">
+        <img src="assets/tec_azuay.png" alt="Logo de la aplicación">
       </div>
-    </form>
+      <form class="form" (submit)="redirectToSistemaAdministrativo()">
+        <h2>Bienvenido</h2>
+        <p class="txt-2">Sistema Gestión Administrativa</p>
+        <div class="inputs">
+          <input type="email" class="box" placeholder="Ingresa tu correo" />
+          <input type="password" class="box" placeholder="Ingresa tu contraseña" />
+          <button type="submit">Iniciar sesión</button>
+          <a href="/recuperacion-contrasena">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
+
 </html>

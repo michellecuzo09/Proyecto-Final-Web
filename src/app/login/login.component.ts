@@ -16,9 +16,8 @@ export class LoginComponent implements OnInit {
   }
 
   redirectToSistemaAdministrativo() {
-    // Redirige a la ruta '/sistema-administrativo'
-    console.log("Redirigiendo a sistema-administrativo");
-    this.router.navigate(['/sistema-administrativo']);
-  
+    // falta logica para autenticaaar!!!
+
+    this.router.navigate(['/persona']);
   }
 }
