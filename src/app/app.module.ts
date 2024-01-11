@@ -27,6 +27,7 @@ import { CrearJornadaComponent } from './crear-jornada/crear-jornada.component';
 import { CrearPeriodoComponent } from './crear-periodo/crear-periodo.component';
 import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
+import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'crearperiodo', component: CrearPeriodoComponent },
   { path: 'listarjornada', component: ListarJornadaComponent },
   { path: 'listarcurso', component: ListarCursoComponent },
+  { path: 'crearcurso', component: CrearCursoComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -87,6 +89,7 @@ const routes: Routes = [
     CrearPeriodoComponent,
     ListarJornadaComponent,
     ListarCursoComponent,
+    CrearCursoComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
