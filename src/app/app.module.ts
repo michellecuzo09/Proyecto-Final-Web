@@ -26,6 +26,7 @@ import { CrearCargoComponent } from './crear-cargo/crear-cargo.component';
 import { CrearJornadaComponent } from './crear-jornada/crear-jornada.component';
 import { CrearPeriodoComponent } from './crear-periodo/crear-periodo.component';
 import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
+import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'periodo', component: PeriodosComponent },
   { path: 'crearperiodo', component: CrearPeriodoComponent },
   { path: 'listarjornada', component: ListarJornadaComponent },
+  { path: 'listarcurso', component: ListarCursoComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -84,6 +86,7 @@ const routes: Routes = [
     PeriodosComponent,
     CrearPeriodoComponent,
     ListarJornadaComponent,
+    ListarCursoComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
