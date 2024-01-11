@@ -1,1 +1,47 @@
-<p>listar-actividades-no-docentes works!</p>
+<div>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+
+    <body>
+
+        <div class="center-container">
+            <p class="txt-2">Listado de Actividades No Docentes</p>
+
+            <div class="inputs">
+                <button routerLink="/actividades-no-docente">Crear</button>
+                <button>Editar</button>
+                <input type="text" class="box" placeholder="Buscar" />
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Actividad</th>
+                        <th>Número de Horas</th>
+                        <th>Docente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Actividad 1</td>
+                        <td>10</td>
+                        <td>Williams Trelles</td>
+                    </tr>
+                    <tr>
+                        <td>Actividad 2</td>
+                        <td>15</td>
+                        <td>Jessica Herrera</td>
+                    </tr>
+                    <tr>
+                        <td>Actividad 3</td>
+                        <td>8</td>
+                        <td>Diego Calé</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </body>
+
+    <app-footer></app-footer>
+</div>
