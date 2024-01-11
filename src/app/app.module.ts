@@ -31,6 +31,8 @@ import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 import { CrearCarreraComponent } from './crear-carrera/crear-carrera.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { SeleccionActividadComponent } from './seleccion-actividad/seleccion-actividad.component';
+import { AsignaturaComponent } from './asignatura/asignatura.component';
+import { CrearAsignaturaComponent } from './crear-asignatura/crear-asignatura.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -57,11 +59,16 @@ const routes: Routes = [
   { path: 'crearcurso', component: CrearCursoComponent },
   { path: 'crear-carrera', component: CrearCarreraComponent },
   { path: 'carrera', component: CarreraComponent },
-  {path: 'recuperacion-contrasena',component: RecuperacionContrasenaComponent},
+  {
+    path: 'recuperacion-contrasena',
+    component: RecuperacionContrasenaComponent,
+  },
   { path: 'creartitulo', component: CrearTituloComponent },
   { path: 'gradoOcu', component: GradoOcupacionalComponent },
   { path: 'creargrado', component: CrearGradoOcupacionalComponent },
   { path: 'seleccion-actividad', component: SeleccionActividadComponent },
+  { path: 'asignatura', component: AsignaturaComponent },
+  { path: 'crearasignatura', component: CrearAsignaturaComponent },
 ];
 
 @NgModule({
@@ -96,6 +103,8 @@ const routes: Routes = [
     CrearCarreraComponent,
     CarreraComponent,
     SeleccionActividadComponent,
+    AsignaturaComponent,
+    CrearAsignaturaComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
