@@ -23,6 +23,7 @@ import { GradoOcupacionalComponent } from './grado-ocupacional/grado-ocupacional
 import { CrearGradoOcupacionalComponent } from './crear-grado-ocupacional/crear-grado-ocupacional.component';
 import { CargoComponent } from './cargo/cargo.component';
 import { CrearCargoComponent } from './crear-cargo/crear-cargo.component';
+import { CrearJornadaComponent } from './crear-jornada/crear-jornada.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -35,20 +36,20 @@ const routes: Routes = [
   { path: 'crearUsuario', component: CrearUsuarioComponent },
   { path: 'persona', component: PersonaComponent },
   { path: 'crearpersona', component: CrearPersonaComponent },
-{path:'titulo',component:TituloComponent},
-{ path: 'tipocontrato', component: TipoContratoComponent },
-{ path: 'crearcontrato', component: CrearTipoContratoComponent },
-{ path: 'cargo', component: CargoComponent },
-{ path: 'crearcargo', component: CrearCargoComponent },
+  { path: 'titulo', component: TituloComponent },
+  { path: 'tipocontrato', component: TipoContratoComponent },
+  { path: 'crearcontrato', component: CrearTipoContratoComponent },
+  { path: 'cargo', component: CargoComponent },
+  { path: 'crearcargo', component: CrearCargoComponent },
+  { path: 'crearjornada', component: CrearJornadaComponent },
 
   {
     path: 'recuperacion-contrasena',
     component: RecuperacionContrasenaComponent,
   },
   { path: 'creartitulo', component: CrearTituloComponent },
-{path:'gradoOcu',component:GradoOcupacionalComponent},
-{path:'creargrado',component:CrearGradoOcupacionalComponent},
-
+  { path: 'gradoOcu', component: GradoOcupacionalComponent },
+  { path: 'creargrado', component: CrearGradoOcupacionalComponent },
 ];
 
 @NgModule({
@@ -70,10 +71,11 @@ const routes: Routes = [
     CrearTituloComponent,
     TipoContratoComponent,
     CrearTipoContratoComponent,
-  GradoOcupacionalComponent,
-  CrearGradoOcupacionalComponent,
-  CargoComponent,
-  CrearCargoComponent,
+    GradoOcupacionalComponent,
+    CrearGradoOcupacionalComponent,
+    CargoComponent,
+    CrearCargoComponent,
+    CrearJornadaComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
