@@ -1,1 +1,40 @@
-<p>cargo works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cargo.component.css">
+    <title>Grado Ocupacional</title>
+</head>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="grado-container">
+        <h2>Lista de Grados Ocupacionales</h2>
+        <div class="acciones-container">
+            <button class="crear-button" routerLink="/crearcargo">Crear</button>
+            <button class="eliminar-button">Eliminar</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cargo ID</th>
+                    <th>Cargo Nombre</th>
+                    <th>Cargo Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irán las filas de la tabla con datos de grados ocupacionales -->
+                <tr>
+                    <td>1</td>
+                    <td>Gerente</td>
+                    <td>Responsable de la gestión general</td>
+                   
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>

@@ -21,6 +21,8 @@ import { TipoContratoComponent } from './tipo-contrato/tipo-contrato.component';
 import { CrearTipoContratoComponent } from './crear-tipo-contrato/crear-tipo-contrato.component';
 import { GradoOcupacionalComponent } from './grado-ocupacional/grado-ocupacional.component';
 import { CrearGradoOcupacionalComponent } from './crear-grado-ocupacional/crear-grado-ocupacional.component';
+import { CargoComponent } from './cargo/cargo.component';
+import { CrearCargoComponent } from './crear-cargo/crear-cargo.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: LoginComponent },
@@ -36,6 +38,8 @@ const routes: Routes = [
 {path:'titulo',component:TituloComponent},
 { path: 'tipocontrato', component: TipoContratoComponent },
 { path: 'crearcontrato', component: CrearTipoContratoComponent },
+{ path: 'cargo', component: CargoComponent },
+{ path: 'crearcargo', component: CrearCargoComponent },
 
   {
     path: 'recuperacion-contrasena',
@@ -68,6 +72,8 @@ const routes: Routes = [
     CrearTipoContratoComponent,
   GradoOcupacionalComponent,
   CrearGradoOcupacionalComponent,
+  CargoComponent,
+  CrearCargoComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
