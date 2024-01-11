@@ -1,29 +1,21 @@
-<app-header></app-header>
-<app-menudesp></app-menudesp>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Título</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous" />
-</head>  
-<body>
-  <div class="content">
-    <h1>Actividades Principales</h1>
-    <div class="menu-container">
-      <button class="button" routerLink="/actividades-no-docente">
-        <i class="fas fa-users"></i> <!-- Icono de Font Awesome -->
-        Actividades No Docentes
-      </button>
-      <button class="button" routerLink="/actividades-docente">
-        <i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Font Awesome -->
-        Actividades Docentes
-      </button>
-      <button class="button" routerLink="/extra-actividades">
-        <i class="fas fa-plus"></i> <!-- Icono de Font Awesome -->
-        Extra Actividades
-      </button>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu Título</title>
+  </head>
+  <body>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+    <div class="content">
+      <h1>Actividades Principales</h1>
+      <div class="menu-container">
+        <button class="button" routerLink="/actividades-no-docente">Actividades No Docentes</button>
+        <button class="button" routerLink="/actividades-docente">Actividades Docentes</button>
+        <button class="button" routerLink="/extra-actividades">Extra Actividades</button>
+      </div>
     </div>
-  </div>
-
+    <app-footer></app-footer>
   </body>
-<app-footer></app-footer>
+</html>
