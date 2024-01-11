@@ -5,17 +5,20 @@ body {
 }
 
 footer {
-  background-color:#46adfa; /* Color de fondo del pie de página */
+  background-color: #46adfa; /* Color de fondo del pie de página */
   color: #fff; /* Color del texto en el pie de página */
   text-align: center;
-  padding: 20px;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .texto_footer {
-  font-family: 'Avenir', 'Avenir Next', sans-serif;
+  font-family: "Avenir", "Avenir Next", sans-serif;
 }
 
 .texto-1 {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
