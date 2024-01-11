@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edgm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+    <div class="center-container">
+      <p class="txt-2">Asignaturas</p>
+
+      <div class="inputs">
+        <button class="button1" routerLink="/crearasignatura">Crear</button>
+        <button class="button1">Editar</button>
+        <button class="button2">Eliminar</button>
+        <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
+      </div>
+
+      <table>
+        <thead>
+          <tr class="fila">
+            <th>Asignatura Id</th>
+            <th>Nombre</th>
+            <th>Horas clase a la semana</th>
+            <th>Curso</th>
+            <th>Docente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Fundamentos de Redes</td>
+            <td>6</td>
+            <td>M5A</td>
+            <td>Ing. Williams Trelles</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Fundamentos de Redes</td>
+            <td>6</td>
+            <td>M5A</td>
+            <td>Ing. Williams Trelles</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <app-footer></app-footer>
+</html>
