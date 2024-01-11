@@ -74,6 +74,10 @@ const routes: Routes = [
   { path: 'seleccion-actividad', component: SeleccionActividadComponent },
   { path: 'asignatura', component: AsignaturaComponent },
   { path: 'crearasignatura', component: CrearAsignaturaComponent },
+
+  { path: 'actividades-docente', component: ActividadesDocenteComponent },
+  { path: 'actividades-no-docente', component: ActividadesNoDocenteComponent },
+  { path: 'extra-activiades', component: ExtraActividadesComponent },
 ];
 
 @NgModule({
