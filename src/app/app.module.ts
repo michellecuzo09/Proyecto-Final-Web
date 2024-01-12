@@ -42,6 +42,7 @@ import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-do
 import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
 import { DocenteComponent } from './docente/docente.component';
 import { CreardocenteComponent } from './creardocente/creardocente.component';
+import { DistributivoComponent } from './distributivo/distributivo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -89,6 +90,7 @@ const routes: Routes = [
   { path: 'listar-actividades-no-docentes', component: ListarActividadesNoDocentesComponent },
   { path: 'listar-extra-actividades', component: ListarExtraActividadesComponent },
   { path: 'creardocente', component: CreardocenteComponent },
+  { path: 'distributivo', component: DistributivoComponent },
 
 ];
 
@@ -134,6 +136,7 @@ const routes: Routes = [
     ListarExtraActividadesComponent,
     DocenteComponent,
     CreardocenteComponent,
+    DistributivoComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
