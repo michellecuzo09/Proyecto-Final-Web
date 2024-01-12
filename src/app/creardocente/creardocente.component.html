@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creardocente.component.css">
+    <title>Crear Docentes</title>
+</head>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="form-container">
+        <h2>Crear Nuevo Docente</h2>
+        <form id="create-docente-form">
+            <label for="fechaIngreso">Fecha de Ingreso:</label>
+            <input type="date" id="fechaIngreso" name="fechaIngreso" required>
+
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" required>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+            </select>
+
+            <label for="perId">ID Persona:</label>
+            <select id="perId" name="perId" required>
+                <!-- Opciones para ID Persona -->
+                <option value="1">Persona 1</option>
+                <option value="2">Persona 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <label for="tipoId">ID Tipo:</label>
+            <select id="tipoId" name="tipoId" required>
+                <!-- Opciones para ID Tipo -->
+                <option value="1">Tipo 1</option>
+                <option value="2">Tipo 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <label for="cargoId">ID Cargo:</label>
+            <select id="cargoId" name="cargoId" required>
+                <!-- Opciones para ID Cargo -->
+                <option value="1">Cargo 1</option>
+                <option value="2">Cargo 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <label for="tituloId">ID Título:</label>
+            <select id="tituloId" name="tituloId" required>
+                <!-- Opciones para ID Título -->
+                <option value="1">Título 1</option>
+                <option value="2">Título 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <label for="periodoId">ID Periodo:</label>
+            <select id="periodoId" name="periodoId" required>
+                <!-- Opciones para ID Periodo -->
+                <option value="1">Periodo 1</option>
+                <option value="2">Periodo 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <label for="gradoId">ID Grado:</label>
+            <select id="gradoId" name="gradoId" required>
+                <!-- Opciones para ID Grado -->
+                <option value="1">Grado 1</option>
+                <option value="2">Grado 2</option>
+                <!-- Puedes agregar más opciones según sea necesario -->
+            </select>
+
+            <div class="button-container">
+                <button type="submit" class="create-button">Crear</button>
+                <button class="cancel-button" routerLink="/docente">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+
+</html>
+
+
+

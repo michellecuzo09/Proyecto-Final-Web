@@ -41,6 +41,7 @@ import { ListarActividadesDocentesComponent } from './listar-actividades-docente
 import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-docentes/listar-actividades-no-docentes.component';
 import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
 import { DocenteComponent } from './docente/docente.component';
+import { CreardocenteComponent } from './creardocente/creardocente.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -87,6 +88,8 @@ const routes: Routes = [
   { path: 'listar-actividades-docentes', component: ListarActividadesDocentesComponent },
   { path: 'listar-actividades-no-docentes', component: ListarActividadesNoDocentesComponent },
   { path: 'listar-extra-actividades', component: ListarExtraActividadesComponent },
+  { path: 'creardocente', component: CreardocenteComponent },
+
 ];
 
 @NgModule({
@@ -130,6 +133,7 @@ const routes: Routes = [
     ListarActividadesNoDocentesComponent,
     ListarExtraActividadesComponent,
     DocenteComponent,
+    CreardocenteComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],
