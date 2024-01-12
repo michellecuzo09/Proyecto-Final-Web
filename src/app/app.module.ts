@@ -43,6 +43,7 @@ import { ListarExtraActividadesComponent } from './listar-extra-actividades/list
 import { DocenteComponent } from './docente/docente.component';
 import { CreardocenteComponent } from './creardocente/creardocente.component';
 import { DistributivoComponent } from './distributivo/distributivo.component';
+import { CreardistributivoComponent } from './creardistributivo/creardistributivo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -91,6 +92,7 @@ const routes: Routes = [
   { path: 'listar-extra-actividades', component: ListarExtraActividadesComponent },
   { path: 'creardocente', component: CreardocenteComponent },
   { path: 'distributivo', component: DistributivoComponent },
+  { path: 'creardistributivo', component: CreardistributivoComponent },
 
 ];
 
@@ -137,6 +139,7 @@ const routes: Routes = [
     DocenteComponent,
     CreardocenteComponent,
     DistributivoComponent,
+    CreardistributivoComponent,
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes)],

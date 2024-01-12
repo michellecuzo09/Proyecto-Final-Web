@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creardistributivo.component.css">
+    <title>Crear Nuevo Distributivo</title>
+</head>
+<app-header></app-header>
+<app-menudesp></app-menudesp>
+<body>
+    <div class="form-container">
+        <h2>Crear Nuevo Distributivo</h2>
+        <form id="create-distributivo-form">
+            <label for="carreraId">Carrera ID:</label>
+            <select id="carreraId" name="carreraId" required>
+                <option value="1">Carrera 1</option>
+                <option value="2">Carrera 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="jornadaId">Jornada ID:</label>
+            <select id="jornadaId" name="jornadaId" required>
+                <option value="1">Jornada 1</option>
+                <option value="2">Jornada 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="cursoId">Curso ID:</label>
+            <select id="cursoId" name="cursoId" required>
+                <option value="1">Curso 1</option>
+                <option value="2">Curso 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="periodoId">Periodo ID:</label>
+            <select id="periodoId" name="periodoId" required>
+                <option value="1">Periodo 1</option>
+                <option value="2">Periodo 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="asignaturaId">Asignatura ID:</label>
+            <select id="asignaturaId" name="asignaturaId" required>
+                <option value="1">Asignatura 1</option>
+                <option value="2">Asignatura 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="activiDocId">Actividad Docente ID:</label>
+            <select id="activiDocId" name="activiDocId" required>
+                <option value="1">Actividad Docente 1</option>
+                <option value="2">Actividad Docente 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="activiNoDocId">Actividad No Docente ID:</label>
+            <select id="activiNoDocId" name="activiNoDocId" required>
+                <option value="1">Actividad No Docente 1</option>
+                <option value="2">Actividad No Docente 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="docenteId">Docente ID:</label>
+            <select id="docenteId" name="docenteId" required>
+                <option value="1">Docente 1</option>
+                <option value="2">Docente 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <label for="registroContratoId">Registro Contrato ID:</label>
+            <select id="registroContratoId" name="registroContratoId" required>
+                <option value="1">Registro Contrato 1</option>
+                <option value="2">Registro Contrato 2</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <div class="button-container">
+                <button type="submit" class="create-button">Crear</button>
+                <button type="button" class="cancel-button">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<app-footer></app-footer>
+</html>
