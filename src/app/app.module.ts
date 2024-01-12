@@ -8,31 +8,31 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RolesComponent } from './roles/roles.component';
 import { RecuperacionContrasenaComponent } from './recuperacion-contrasena/recuperacion-contrasena.component';
-import { CrearRolComponent } from './crear-rol/crear-rol.component';
+import { CrearRolComponent } from './roles/crear-rol.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
 import { MenudespComponent } from './menudesp/menudesp.component';
 import { PeriodosComponent } from './periodos/periodos.component';
 import { PersonaComponent } from './persona/persona.component';
-import { CrearPersonaComponent } from './crear-persona/crear-persona.component';
+import { CrearPersonaComponent } from './persona/crear-persona.component';
 import { TituloComponent } from './titulo/titulo.component';
-import { CrearTituloComponent } from './crear-titulo/crear-titulo.component';
+import { CrearTituloComponent } from './titulo/crear-titulo.component';
 import { TipoContratoComponent } from './tipo-contrato/tipo-contrato.component';
-import { CrearTipoContratoComponent } from './crear-tipo-contrato/crear-tipo-contrato.component';
+import { CrearTipoContratoComponent } from './tipo-contrato/crear-tipo-contrato.component';
 import { GradoOcupacionalComponent } from './grado-ocupacional/grado-ocupacional.component';
-import { CrearGradoOcupacionalComponent } from './crear-grado-ocupacional/crear-grado-ocupacional.component';
+import { CrearGradoOcupacionalComponent } from './grado-ocupacional/crear-grado-ocupacional.component';
 import { CargoComponent } from './cargo/cargo.component';
-import { CrearCargoComponent } from './crear-cargo/crear-cargo.component';
-import { CrearJornadaComponent } from './crear-jornada/crear-jornada.component';
-import { CrearPeriodoComponent } from './crear-periodo/crear-periodo.component';
+import { CrearCargoComponent } from './cargo/crear-cargo.component';
+import { CrearJornadaComponent } from './jornada/crear-jornada.component';
+import { CrearPeriodoComponent } from './periodos/crear-periodo.component';
 import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
-import { CrearCursoComponent } from './crear-curso/crear-curso.component';
-import { CrearCarreraComponent } from './crear-carrera/crear-carrera.component';
+import { CrearCursoComponent } from './listar-curso/crear-curso.component';
+import { CrearCarreraComponent } from './carrera/crear-carrera.component';
 import { CarreraComponent } from './carrera/carrera.component';
 import { SeleccionActividadComponent } from './seleccion-actividad/seleccion-actividad.component';
 import { AsignaturaComponent } from './asignatura/asignatura.component';
-import { CrearAsignaturaComponent } from './crear-asignatura/crear-asignatura.component';
+import { CrearAsignaturaComponent } from './asignatura/crear-asignatura.component';
 
 import { ActividadesDocenteComponent } from './actividades-docente/actividades-docente.component';
 import { ActividadesNoDocenteComponent } from './actividades-no-docente/actividades-no-docente.component';
@@ -41,9 +41,9 @@ import { ListarActividadesDocentesComponent } from './listar-actividades-docente
 import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-docentes/listar-actividades-no-docentes.component';
 import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
 import { DocenteComponent } from './docente/docente.component';
-import { CreardocenteComponent } from './creardocente/creardocente.component';
+import { CreardocenteComponent } from './docente/creardocente.component';
 import { DistributivoComponent } from './distributivo/distributivo.component';
-import { CreardistributivoComponent } from './creardistributivo/creardistributivo.component';
+import { CreardistributivoComponent } from './distributivo/creardistributivo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
