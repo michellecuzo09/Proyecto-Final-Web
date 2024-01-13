@@ -1,32 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="crear-jornada.component.css">
+  <title>Tu Título</title>
+</head>
 <body>
   <app-header></app-header>
   <app-menudesp></app-menudesp>
-  <div>
+  <div class="contenedor-principal">
     <!-- Formulario -->
-    <form class="formulario">
+    <form class="formulario" (submit)="crearJornada()">
       <fieldset>
         <legend class="titulo_formulario">Crear Jornada</legend>
         <div class="contenedor_formulario">
           <div class="mb-3">
-            <input
-              type="text"
-              id="disabledTextInput"
-              class="form-control"
-              placeholder="Nombre"
-            />
-            <input
-              type="text"
-              id="disabledTextInput"
-              class="form-control"
-              placeholder="Descripción"
-            />
+            <label for="nombre" class="form-label">Nombre de la Jornada:</label>
+            <input type="text" [(ngModel)]="nuevaJornada.jornada_nombre" name="jornada_nombre" required>
           </div>
-
-          <button type="submit" class="btn1 btn btn-primary">Registrar</button>
-          <button type="submit" class="btn2 btn btn-danger">Cancelar</button>
+          <!-- Agrega el icono al botón Registrar -->
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i> Registrar
+          </button>
+          <!-- Cambia el tipo de botón de submit a button para evitar enviar el formulario al presionar Cancelar -->
+          <button type="button" class="btn2 btn btn-danger" (click)="cancelar()">
+            <i class="fa fa-times"></i> Cancelar
+          </button>
         </div>
       </fieldset>
     </form>
   </div>
   <app-footer></app-footer>
 </body>
+</html>

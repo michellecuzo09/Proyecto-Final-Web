@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; // Importa el HttpClientModule
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -25,7 +26,7 @@ import { CargoComponent } from './cargo/cargo.component';
 import { CrearCargoComponent } from './cargo/crear-cargo.component';
 import { CrearJornadaComponent } from './jornada/crear-jornada.component';
 import { CrearPeriodoComponent } from './periodos/crear-periodo.component';
-import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
+import { ListarJornadaComponent } from './jornada/listar-jornada.component';
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 import { CrearCursoComponent } from './listar-curso/crear-curso.component';
 import { CrearCarreraComponent } from './carrera/crear-carrera.component';
@@ -44,6 +45,13 @@ import { DocenteComponent } from './docente/docente.component';
 import { CreardocenteComponent } from './docente/creardocente.component';
 import { DistributivoComponent } from './distributivo/distributivo.component';
 import { CreardistributivoComponent } from './distributivo/creardistributivo.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActualizarJornadaModalComponent } from './jornada/actualizar-jornada-modal/actualizar-jornada-modal.component';
+//
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -93,6 +101,9 @@ const routes: Routes = [
   { path: 'creardocente', component: CreardocenteComponent },
   { path: 'distributivo', component: DistributivoComponent },
   { path: 'creardistributivo', component: CreardistributivoComponent },
+  //
+  {path: 'abrirModalActualizar', component: ActividadesDocenteComponent}
+
 
 ];
 
@@ -140,9 +151,12 @@ const routes: Routes = [
     CreardocenteComponent,
     DistributivoComponent,
     CreardistributivoComponent,
+    ActualizarJornadaModalComponent,
   ],
 
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 
+    ModalModule.forRoot(), AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
