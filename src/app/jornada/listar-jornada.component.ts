@@ -27,7 +27,7 @@ export class ListarJornadaComponent  implements OnInit {
   }
 
   cargarJornada(): void {
-    this.jornadaService.getJornada().subscribe(
+    this.jornadaService.getJornadas().subscribe(
       data => {
         this.jornadas = data;
         console.log(data); // Muestra la respuesta en la consola

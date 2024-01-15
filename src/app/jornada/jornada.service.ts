@@ -8,6 +8,7 @@ import { Jornada } from './jornada';
   })
 
   export class JornadaService{
+  
 
     private urlEndPoint:string = 'http://localhost:8080/api/jornadas/listar'
     private urlEndPoint_1:string = 'http://localhost:8080/api/jornadas/guardar'
@@ -18,7 +19,7 @@ import { Jornada } from './jornada';
     
     constructor(private http:HttpClient) {}
   
-      getJornada(): Observable<Jornada[]> {
+      getJornadas(): Observable<Jornada[]> {
    
         return this.http.get<Jornada[]>(this.urlEndPoint);
       }
@@ -27,7 +28,7 @@ import { Jornada } from './jornada';
         return this.http.post<Jornada>(this.urlEndPoint_1, jornada, {headers: this.httpHeaders})
       }
   
-      getjornada(id:number):Observable<Jornada> {
+      getjornadaid(id:number):Observable<Jornada> {
         return this.http.get<Jornada>(`${this.urlEndPoint_1}/${id}`)
       }
   
@@ -44,9 +45,9 @@ import { Jornada } from './jornada';
    //   const url = `${this.urlEndPoint_3}/${jornada.jornada_id}`;
      // return this.http.put<Jornada>(url, jornada);
  //   }
- updateJornada(id: number, jornada: Jornada): Observable<any> {
-  const url = `${this.urlEndPoint_3}/actualizar/${id}`; // Ajusta la URL según la estructura de tu backend
-  return this.http.put(url, jornada);
+ updateJornada(jornada: Jornada): Observable<Jornada> {
+  //const url = `${this.urlEndPoint_3}${id}`; // Ajusta la URL según la estructura de tu backend
+  return this.http.put<Jornada>(`${this.urlEndPoint_3}${jornada.jornada_id}`, jornada);
 }
 
 }
