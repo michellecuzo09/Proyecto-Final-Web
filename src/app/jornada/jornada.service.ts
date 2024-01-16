@@ -42,10 +42,7 @@ import { Jornada } from './jornada';
            return this.http.delete<Jornada>(url);
     }
   
-  //  updateJornada(jornada: Jornada): Observable<Jornada> {
-   //   const url = `${this.urlEndPoint_3}/${jornada.jornada_id}`;
-     // return this.http.put<Jornada>(url, jornada);
- //   }
+
  updateJornada(jornada: Jornada): Observable<Jornada> {
   const url = `http://localhost:8080/api/jornadas/actualizar/${jornada.jornada_id}`;
   console.log('URL de actualización:', url);
