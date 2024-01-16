@@ -15,6 +15,7 @@ import { Jornada } from './jornada';
     private urlEndPoint_1:string = 'http://localhost:8080/api/jornadas/guardar'
     private urlEndPoint_2:string = 'http://localhost:8080/api/jornadas/eliminar/{{id}}'
     private urlEndPoint_3:string = 'http://localhost:8080/api/jornadas/actualizar/{{id}}'
+    private urlEndPoint_4:string = 'http://localhost:8080/api/jornadas/buscar/{{id}}'
   
     private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json'});
     
@@ -38,7 +39,7 @@ import { Jornada } from './jornada';
    //   }
    
     deleteJornada(jornada_id: number): Observable<Jornada> {
-          const url = `${this.urlEndPoint_2}/${jornada_id}`; // Ajusta la URL según tu estructura
+          const url = `http://localhost:8080/api/jornadas/eliminar/${jornada_id}`; // Ajusta la URL según tu estructura
            return this.http.delete<Jornada>(url);
     }
   
@@ -48,5 +49,7 @@ import { Jornada } from './jornada';
   console.log('URL de actualización:', url);
   return this.http.put<Jornada>(url, jornada);
 }
+///
+
 
 }
