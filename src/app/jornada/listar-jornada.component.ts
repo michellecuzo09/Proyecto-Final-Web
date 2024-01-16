@@ -4,6 +4,8 @@ import { Jornada } from './jornada';
 import { Observable } from 'rxjs';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ActualizarJornadaModalComponent } from './actualizar-jornada-modal/actualizar-jornada-modal.component';
+import { FormsModule } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-listar-jornada',
@@ -11,6 +13,7 @@ import { ActualizarJornadaModalComponent } from './actualizar-jornada-modal/actu
   styleUrls: ['./listar-jornada.component.css']
 })
 export class ListarJornadaComponent  implements OnInit {
+  [x: string]: any;
 
 
   jornadas: Jornada[] = [];
@@ -19,11 +22,17 @@ export class ListarJornadaComponent  implements OnInit {
   http: any;
   modalRef: BsModalRef | undefined ;
   jornada: Jornada | undefined;
+  nombreABuscar: any;
+  //
+  isLoading: boolean = true; // Nueva propiedad para rastrear si la carga está en progreso
+  jornadasFiltradas: Jornada[] = [];  // Nuevo array para las jornadas filtradas
+  todasLasJornadas: Jornada[] = []; 
 
   constructor(private jornadaService: JornadaService, private modalService: BsModalService ) {}
 
   ngOnInit(): void {
     this.cargarLista();
+    FormsModule
   }
 
 
@@ -74,6 +83,22 @@ export class ListarJornadaComponent  implements OnInit {
       );
     }
   }
-  
+  ///
+  textoBusqueda: string = '';
 
+  // buscar
+  
+  jornadaMatchesSearch(jornada: Jornada): boolean {
+    return jornada.jornada_nombre.toLowerCase().includes(this.textoBusqueda.toLowerCase());
+  }
+
+  buscar(): void {
+    if (this.textoBusqueda.trim() !== '' ) {
+      this.jornadas = this.jornadas.filter((jornada: Jornada) => this.jornadaMatchesSearch(jornada));
+    } else {
+      this.cargarLista(); // Vuelve a cargar todas las jornadas
+    }
+  }
 }
+
+

@@ -16,7 +16,10 @@
         <button class="button1" routerLink="/crearjornada">Crear</button>
         <!-- Añade botones de "Editar" y "Eliminar" aquí -->
         
-        <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
+        <!-- Formulario de búsqueda -->
+        <button class="button1" routerLink="/crearjornada">Crear</button>
+        <input class="buscar" type="text" [(ngModel)]="textoBusqueda" placeholder="Buscar por nombre" (input)="buscar()" />
+               
       </div>
 
       <table>
@@ -24,6 +27,8 @@
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
             <!-- Agrega más columnas según los atributos de Jornada -->
           </tr>
         </thead>
