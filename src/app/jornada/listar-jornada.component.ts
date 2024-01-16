@@ -23,32 +23,42 @@ export class ListarJornadaComponent  implements OnInit {
   constructor(private jornadaService: JornadaService, private modalService: BsModalService ) {}
 
   ngOnInit(): void {
-    this.cargarJornada();
+    this.cargarLista();
   }
 
-  cargarJornada(): void {
+
+  
+  cargarLista(): void {
     this.jornadaService.getJornadas().subscribe(
+      jornadas => this.jornadas = jornadas
+    );
+  }
+
+  cargarJornada(jornadaId: number): void {
+    this.jornadaService.getjornadaid(jornadaId).subscribe(
       data => {
-        this.jornadas = data;
+        this.jornada = data;
         console.log(data); // Muestra la respuesta en la consola
+        this.abrirModalActualizar(this.jornada);  // Llamada a la función para abrir el modal
       },
       error => {
         console.error(error);
       }
     );
   }
-
+  
   //prueba
   abrirModalActualizar(jornada: Jornada) {
     const initialState = {
-      jornada_Id: jornada.jornada_id,
+      jornada: jornada,  // Cambié 'jornada_Id' a 'jornada' para pasar el objeto completo
     };
-
+  
     // Asignar la jornada al contexto del componente
     this.jornada = jornada;
-
+  
     this.modalRef = this.modalService.show(ActualizarJornadaModalComponent, { initialState });
   }
+  
 // Método para actualizar la jornada
 // actualizarJornada(updatedJornada: Jornada) {
 //   if (this.jornada && this.jornada.jornada_id) {

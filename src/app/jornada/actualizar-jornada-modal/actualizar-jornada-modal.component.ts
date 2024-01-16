@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { JornadaService } from '../jornada.service';
 import { Jornada } from '../jornada';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-actualizar-jornada-modal',
@@ -13,20 +14,13 @@ export class ActualizarJornadaModalComponent implements OnInit {
   @Input() jornada: Jornada | undefined;
   jornada_Id: number | undefined;
   updateForm!: FormGroup;
-  jornadas: Jornada[] =[];
 
   constructor(public modalRef: BsModalRef, private fb: FormBuilder, private jornadaService: JornadaService) { }
 
   ngOnInit() {
     this.createForm();
-    //this.loadJornadaDetails();
-    this.cargarLista();
-    
-  }
-  cargarLista():void {
-    this.jornadaService.getJornadas().subscribe(
-      jornada => this.jornadas = jornada
-    )
+ 
+    this.loadJornadaDetails();
   }
 
   createForm() {
@@ -53,16 +47,27 @@ export class ActualizarJornadaModalComponent implements OnInit {
     if (this.updateForm && this.updateForm.valid) {
       const updatedJornada = this.updateForm.value;
       updatedJornada.jornada_id = this.jornada?.jornada_id || 0;
-
-      // Pasa solo el ID de la jornada en lugar de la jornada completa
+  
+      console.log('Jornada ID seleccionado:', updatedJornada.jornada_id);
+      if (!updatedJornada.jornada_id) {
+        console.error('Error: ID de jornada no válido');
+        return;
+      }
+  
       this.jornadaService.updateJornada(updatedJornada).subscribe(
         data => {
           console.log('Jornada actualizada con éxito:', data);
+          this.modalRef.hide();  // Cierra la ventana desplegable después de la actualización
         },
         error => {
           console.error('Error al actualizar la jornada:', error);
+      
+          if (error instanceof HttpErrorResponse && error.status === 200) {
+            console.warn('El servidor respondió con un estado 200 pero el contenido no es JSON válido.');
+          } else {
+            // Manejar otros tipos de errores
+          }
         }
       );
-    }
-  }
+  }}
 }

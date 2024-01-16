@@ -16,10 +16,16 @@ export class JornadaComponent implements OnInit{
   ngOnInit(): void {
     this.cargarLista
   }
-  cargarLista():void {
-    this.jornadaService.getJornada().subscribe(
-      jornada => this.jornadas = jornada
-    )
+  cargarLista(): void {
+    this.jornadaService.getJornadas().subscribe(
+      jornadas => {
+        this.jornadas = jornadas;
+        console.log('Jornadas cargadas:', this.jornadas);
+      },
+      error => {
+        console.error('Error al cargar las jornadas:', error);
+      }
+    );
   }
 
 }
