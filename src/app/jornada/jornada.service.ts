@@ -38,7 +38,7 @@ import { Jornada } from './jornada';
    //   }
    
     deleteJornada(jornada_id: number): Observable<Jornada> {
-          const url = `${this.urlEndPoint_2}/${jornada_id}`; // Ajusta la URL según tu estructura
+          const url = `http://localhost:8080/api/jornadas/eliminar/${jornada_id}`; // Ajusta la URL según tu estructura
            return this.http.delete<Jornada>(url);
     }
   

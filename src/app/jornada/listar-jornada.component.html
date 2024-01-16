@@ -35,10 +35,12 @@
             <td>
               <button style="border: none; background: transparent;" (click)="abrirModalActualizar(jornada)">
                 <i class="fas fa-pencil-alt"></i>
-              </button>
-              
-             <!--<button class="button2" (click)="['eliminarJornada'](jornada)">Eliminar</button>--> 
+              </button> 
             </td>
+            <td>
+              <button style="border: none; background: transparent;" (click)="eliminarJornada(jornada.jornada_id)">
+                <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+              </button>
           </tr>
         </tbody>
       </table>

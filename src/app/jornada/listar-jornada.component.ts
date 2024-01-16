@@ -39,7 +39,7 @@ export class ListarJornadaComponent  implements OnInit {
       data => {
         this.jornada = data;
         console.log(data); // Muestra la respuesta en la consola
-        this.abrirModalActualizar(this.jornada);  // Llamada a la función para abrir el modal
+        this.eliminarJornada(this.jornada.jornada_id);  // Llamada a la función para abrir el modal
       },
       error => {
         console.error(error);
@@ -58,20 +58,22 @@ export class ListarJornadaComponent  implements OnInit {
   
     this.modalRef = this.modalService.show(ActualizarJornadaModalComponent, { initialState });
   }
+  //
+  eliminarJornada(jornadaId: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar esta jornada?')) {
+      // Llama al servicio para eliminar la jornada
+      this.jornadaService.deleteJornada(jornadaId).subscribe(
+        data => {
+          console.log('Jornada eliminada con éxito:', data);
+          // Aquí puedes realizar acciones adicionales después de la eliminación
+        },
+        error => {
+          console.error('Error al eliminar la jornada:', error);
+          // Manejar el error según sea necesario
+        }
+      );
+    }
+  }
   
-// Método para actualizar la jornada
-// actualizarJornada(updatedJornada: Jornada) {
-//   if (this.jornada && this.jornada.jornada_id) {
-//     this.jornadaService.updateJornada(updatedJornada, this.jornada.jornada_id).subscribe(
-//       data => {
-//         console.log('Jornada actualizada con éxito:', data);
-//       },
-//       error => {
-//         console.error('Error al actualizar la jornada:', error);
-//       }
-//     );
-//   } else {
-//     console.error('No se ha seleccionado ninguna jornada para actualizar.');
-//   }
-// }
+
 }
