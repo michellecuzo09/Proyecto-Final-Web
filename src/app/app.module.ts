@@ -52,6 +52,9 @@ import { ActualizarJornadaModalComponent } from './jornada/actualizar-jornada-mo
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
+import { ListarGradoComponent } from './grado-ocupacional/listar-grado/listar-grado.component';
+import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-grado-modal/actualizar-grado-modal.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -102,8 +105,10 @@ const routes: Routes = [
   { path: 'distributivo', component: DistributivoComponent },
   { path: 'creardistributivo', component: CreardistributivoComponent },
   //
-  {path: 'abrirModalActualizar', component: ActividadesDocenteComponent}
-
+  {path: 'abrirModalActualizar', component: ActividadesDocenteComponent},
+  {path:'listarGrado', component:ListarGradoComponent},
+  //
+  {path:'listargrados', component:ListarGradoComponent}
 
 ];
 
@@ -152,6 +157,8 @@ const routes: Routes = [
     DistributivoComponent,
     CreardistributivoComponent,
     ActualizarJornadaModalComponent,
+    ActualizarGradoModalComponent,
+    ListarGradoComponent
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 
@@ -160,4 +167,6 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+}

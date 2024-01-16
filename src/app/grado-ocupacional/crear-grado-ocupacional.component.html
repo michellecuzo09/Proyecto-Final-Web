@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="crear-grado-ocupacional.component.css">
-    <title>Formulario de Grado Ocupacional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="crear-grado-ocupacional.component.css">
+  <title>Tu Título</title>
 </head>
-<app-header></app-header>
-<app-menudesp></app-menudesp>
 <body>
-    <div class="formulario-container">
-        <h2>Formulario de Grado Ocupacional</h2>
-        <form id="grado-form">
-            <label for="gradoTitulo">Título de Grado:</label>
-            <input type="text" id="gradoTitulo" name="gradoTitulo" required>
-
-            <label for="gradoTipoSalario">Tipo de Salario:</label>
-            <input type="text" id="gradoTipoSalario" name="gradoTipoSalario" required>
-
-            <div class="acciones-container">
-                <button type="submit" class="crear-button">Crear</button>
-                <button  class="cancelar-button" routerLink="/gradoOcu">Cancelar</button>
-            </div>
-        </form>
-    </div>
+  <app-header></app-header>
+  <app-menudesp></app-menudesp>
+  <div class="contenedor-principal">
+    <!-- Formulario -->
+    <form class="formulario" (submit)="crearGrado()">
+      <fieldset>
+        <legend class="titulo_formulario">Crear Grado Ocupacional</legend>
+        <div class="contenedor_formulario">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Titulo de grado Ocupacional:</label>
+            <input type="text" [(ngModel)]="nuevoGrado.grado_titulo" name="grado_titulo" required>
+            <label for="nombre" class="form-label">Tipo de salario:</label>
+            <input type="text" [(ngModel)]="nuevoGrado.grado_tipo_salario" name="grado_tipo_salario" required>
+          </div>
+          <!-- Agrega el icono al botón Registrar -->
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i> Registrar
+          </button>
+          <!-- Cambia el tipo de botón de submit a button para evitar enviar el formulario al presionar Cancelar -->
+          <button type="button" class="btn2 btn btn-danger" (click)="cancelar()">
+            <i class="fa fa-times"></i> Cancelar
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <app-footer></app-footer>
 </body>
-<app-footer></app-footer>
 </html>

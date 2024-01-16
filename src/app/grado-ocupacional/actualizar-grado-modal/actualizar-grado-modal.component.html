@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h4 class="modal-title">Actualizar Grado Ocupacional</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <!-- Campos del formulario -->
+      <div class="form-group">
+        <label for="grado_titulo">Titulo del grado:</label>
+        <input type="text" class="form-control" id="grado_titulo" formControlName="grado_titulo" required>
+  
+        <label for="grado_tipo_salario">Tipo de salario del grado:</label>
+        <!-- ^^^^ Corregí el texto del label aquí ^^^^ -->
+        <input type="text" class="form-control" id="grado_tipo_salario" formControlName="grado_tipo_salario" required>
+      </div>
+      <!-- Otros campos del formulario según tu modelo GradoOcupacional -->
+  
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+  

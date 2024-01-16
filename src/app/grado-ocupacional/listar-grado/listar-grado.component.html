@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+    <div class="grado-container">
+  
+        <h2>Lista de Grados Ocupacionales</h2>
+         <button class="crear-button" routerLink="/creargrado">Crear</button>
+                        <button class="eliminar-button">Eliminar</button>
+                        <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Grado ID</th>
+                    <th>Grado Título</th>
+                    <th>Grado Tipo Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let grado of grados">
+                    <td>{{ grado.grado_id }}</td>
+                    <td>{{ grado.grado_titulo }}</td>
+                    <td>{{ grado.grado_tipo_salario }}</td>
+                    <!-- Agrega más celdas según los atributos de Jornada -->
+                    <td>
+                      <button style="border: none; background: transparent;" (click)="abrirModalActualizar(grado)">
+                        <i class="fas fa-pencil-alt"></i>
+                      </button>
+                      
+                     <!--<button class="button2" (click)="['eliminarJornada'](jornada)">Eliminar</button>--> 
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <!-- Añade un router-outlet para cargar componentes Angular -->
+          <router-outlet></router-outlet>
+      
+          <app-footer></app-footer>
+        </body>
+      </html>
+      
