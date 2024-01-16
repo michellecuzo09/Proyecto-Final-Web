@@ -162,7 +162,7 @@ const routes: Routes = [
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 
-    ModalModule.forRoot(), AppRoutingModule
+    ModalModule.forRoot(), AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
