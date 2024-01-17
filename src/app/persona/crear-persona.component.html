@@ -6,40 +6,64 @@
     <link rel="stylesheet" href="crear-persona.component.css">
     <title>Crear Persona</title>
 </head>
-<app-header></app-header>
-<app-menudesp></app-menudesp>
+
 <body>
+    <app-header></app-header>
+    <app-menudesp></app-menudesp>
+    <div class="container">
+        <form class="formulario" (ngSubmit)="crearPer()">
+        <fieldset>
+            <legend class="titulo_formulario">Crear persona</legend>
 
-    <div class="form-container">
-        <h2>Crear Persona</h2>
-        <form id="create-person-form">
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" required>
+        
+            <div class="contenedor_formulario">
+                <div class="mb-3">
 
-            <label for="primerNombre">Primer Nombre:</label>
-            <input type="text" id="primerNombre" name="primerNombre" required>
+                    <label for="per_cedula" class="form-label">cedula:</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_cedula" name="per_cedula"required class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="per_primer_nombre" class="form-label">primer nombre:</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_primer_nombre" name="per_primer_nombre" required class="form-control">
+                </div>
+                <div class="mb-3">
 
-            <label for="segundoNombre">Segundo Nombre:</label>
-            <input type="text" id="segundoNombre" name="segundoNombre">
+                    <label for="per_segundo_nombre" class="form-label">segundo nombre:</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_segundo_nombre" name="per_segundo_nombre"required class="form-control">
+                </div>
+                <div class="mb-3">
 
-            <label for="apellidoPaterno">Apellido Paterno:</label>
-            <input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+                    <label for="per_apellido_paterno" class="form-label">apellido paterno :</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_apellido_paterno" name="per_apellido_paterno"required class="form-control">
+                </div>
+                <div class="mb-3">
 
-            <label for="apellidoMaterno">Apellido Materno:</label>
-            <input type="text" id="apellidoMaterno" name="apellidoMaterno">
+                    <label for="per_apellido_materno" class="form-label">apellido materno :</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_apellido_materno" name="per_apellido_materno"required class="form-control">
+                </div>
+                <div class="mb-3">
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono">
+                    <label for="per_telefono" class="form-label">telefono :</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_telefono" name="per_telefono"required class="form-control">
+                </div>
+                <div class="mb-3">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                    <label for="per_email" class="form-label">email :</label>
+                    <input type="text" [(ngModel)]="nuevaPer.per_email" name="per_email"required class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check"></i> Registrar
+                  </button>
+                  <button type="button" class="btn btn-danger" (click)="cancelar()">
+                    <i class="fa fa-times"></i> Cancelar
+                  </button>
+        </div>
+    </fieldset>
+</form>
 
-            <button class="button" routerLink="/añadir ruta">crear</button>
-            <button class="btn2" routerLink="/persona">Cancelar</button>
-
-        </form>
     </div>
-
+   
+    <app-footer></app-footer>
 </body>
-<app-footer></app-footer>
+
 </html>

@@ -54,7 +54,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarGradoComponent } from './grado-ocupacional/listar-grado/listar-grado.component';
 import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-grado-modal/actualizar-grado-modal.component';
-
+import { ActualizarRoleComponent } from './roles/actualizar-role-modal/actualizar-role-modal.component';
+import { ActualizarPersonaModalComponent } from './persona/actualizar-persona-modal/actualizar-persona-modal.component';
+import { Persona } from './persona/persona';
+import { ActualizarUsuarioModalComponent } from './usuario/actualizar-usuario-modal/actualizar-usuario-modal.component';
+import { Usuario } from './usuario/Usuario';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -108,7 +112,15 @@ const routes: Routes = [
   {path: 'abrirModalActualizar', component: ActividadesDocenteComponent},
   {path:'listarGrado', component:ListarGradoComponent},
   //
-  {path:'listargrados', component:ListarGradoComponent}
+  {path:'listargrados', component:ListarGradoComponent},
+//
+{path:'actualizarrole', component:ActualizarRoleComponent},
+{path:'persona', component:ActualizarPersonaModalComponent},
+
+{path:'actualizarpersona', component:ActualizarPersonaModalComponent},
+{path:'personam', component:Persona},
+{path:'usuariom', component:Usuario},
+{path:'actualizarusuario', component:ActualizarUsuarioModalComponent},
 
 ];
 
@@ -125,7 +137,6 @@ const routes: Routes = [
     CrearUsuarioComponent,
     MenudespComponent,
     CrearUsuarioComponent,
-    PersonaComponent,
     CrearPersonaComponent,
     TituloComponent,
     CrearTituloComponent,
@@ -158,7 +169,16 @@ const routes: Routes = [
     CreardistributivoComponent,
     ActualizarJornadaModalComponent,
     ActualizarGradoModalComponent,
-    ListarGradoComponent
+    ListarGradoComponent,
+    ActualizarRoleComponent,
+    ActualizarPersonaModalComponent,
+    PersonaComponent,
+    ActualizarUsuarioModalComponent,
+    
+
+    
+    
+    
   ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 

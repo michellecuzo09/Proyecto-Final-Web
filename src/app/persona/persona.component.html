@@ -29,23 +29,34 @@
         <th>Apellido Materno</th>
         <th>Teléfono</th>
         <th>Email</th>
+        <th>actualizar</th>
+        <th>eliminar</th>
         <!-- Puedes agregar más columnas según tus necesidades -->
       </tr>
     </thead>
     <tbody>
       <!-- Aquí irán las filas de la tabla con datos de personas -->
-      <tr>
-        <td>1</td>
-        <td>123456789</td>
-        <td>Juan</td>
-        <td>Pablo</td>
-        <td>Gomez</td>
-        <td>Perez</td>
-        <td>123-456-7890</td>
-        <td>juan@example.com</td>
-        <!-- Puedes agregar más celdas con datos de personas -->
-      </tr>
-      <!-- Puedes agregar más filas según tus necesidades -->
+      <tr *ngFor="let persona of personas">
+        <td>{{ persona.per_id }}</td>
+        <td>{{ persona.per_cedula }}</td>
+        <td>{{ persona.per_primer_nombre }}</td>
+        <td>{{ persona.per_segundo_nombre }}</td>
+        <td>{{ persona.per_apellido_paterno }}</td>
+        <td>{{ persona.per_apellido_materno }}</td>
+        <td>{{ persona.per_telefono }}</td>
+        <td>{{ persona.per_email }}</td>
+
+
+       
+        <td>
+          <button style="border: none; background: transparent;" (click)="abrirModalActualizar(persona)">
+            <i class="fas fa-pencil-alt"></i>
+          </button> 
+        </td>
+        <td>
+          <button style="border: none; background: transparent;" (click)="eliminarPer(persona.per_id)">
+            <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+          </button>
     </tbody>
   </table>
 </body>

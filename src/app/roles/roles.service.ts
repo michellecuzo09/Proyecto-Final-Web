@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Rol } from './roles';
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class RolesService{
+    [x: string]: any;
+    private urlEndPoint:string = 'http://localhost:8080/api/roles/listar'
+    private urlEndPoint_1:string = 'http://localhost:8080/api/roles/guardar'
+    private urlEndPoint_2:string = 'http://localhost:8080/api/roles/eliminar/{{id}}'
+    private urlEndPoint_3:string = 'http://localhost:8080/api/roles/actualizar/{{id}}'
+    private urlEndPoint_4:string = 'http://localhost:8080/api/roles/buscar/{{id}}'
+  
+    private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json'});
+    
+    constructor(private http:HttpClient) {}
+    getRoles(): Observable<Rol[]> {
+   
+      return this.http.get<Rol[]>(this.urlEndPoint);
+    }
+    create(roles: Rol): Observable<Rol> {
+      return this.http.post<Rol>(this.urlEndPoint_1, roles, {headers: this.httpHeaders})
+    }
+    getrolesid(id:number):Observable<Rol> {
+      return this.http.get<Rol>(`${this.urlEndPoint_1}/${id}`)
+    }
+    deleteRol(rol_id: number): Observable<Rol> {
+      const url = `http://localhost:8080/api/roles/eliminar/${rol_id}`; // Ajusta la URL según tu estructura
+       return this.http.delete<Rol>(url);
+    }
+       updateRoles(rol: Rol): Observable<Rol> {
+        const url = `http://localhost:8080/api/roles/actualizar/${rol.rol_id}`;
+        console.log('URL de actualización:', url);
+        return this.http.put<Rol>(url, rol);
+}
+}

@@ -1,34 +1,45 @@
-<app-header> </app-header>
-<app-menudesp></app-menudesp>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="crear-rol.component.css">
+  <title>Tu Título</title>
+</head>
+
 <body>
- 
-  <div>
+
+  <app-header></app-header>
+  <app-menudesp></app-menudesp>
+
+  <div class="container">
     <!-- Formulario -->
-    <form class="formulario">
+    <form class="formulario" (ngSubmit)="crearRol()">
       <fieldset>
         <legend class="titulo_formulario">Crear Rol</legend>
         <div class="contenedor_formulario">
           <div class="mb-3">
-            <input
-              type="text"
-              id="disabledTextInput"
-              class="form-control"
-              placeholder="Nombre"
-            />
-            <input
-              type="text"
-              id="disabledTextInput"
-              class="form-control"
-              placeholder="Descripción"
-            />
+            <label for="nombre" class="form-label">Nombre del rol:</label>
+            <input type="text" [(ngModel)]="nuevoRol.rol_nombre" name="rol_nombre" required class="form-control">
           </div>
-
-          <button type="submit" class="btn1 btn btn-primary">Registrar</button>
-              <button class="btn2" routerLink="/roles">Cancelar</button>
-
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción del rol:</label>
+            <input type="text" [(ngModel)]="nuevoRol.rol_descripcion" name="rol_descripcion" required class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i> Registrar
+          </button>
+          <!-- Cambia el tipo de botón de submit a button para evitar enviar el formulario al presionar Cancelar -->
+          <button type="button" class="btn btn-danger" (click)="cancelar()">
+            <i class="fa fa-times"></i> Cancelar
+          </button>
         </div>
       </fieldset>
     </form>
   </div>
+
   <app-footer></app-footer>
 </body>
+
+</html>

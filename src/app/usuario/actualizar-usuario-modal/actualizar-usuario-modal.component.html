@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title">Actualizar usuario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <!-- Campos del formulario -->
+      <div class="form-group">
+        <label for="usu_usuario">usuario:</label>
+        <input type="text" class="form-control" id="usu_usuario" formControlName="usu_usuario"required>
+        <label for="usu_contrasena"> contrasena  :</label>
+        <input type="text" class="form-control" id="usu_contrasena" formControlName="usu_contrasena" required>
+        <label for="per_id">  per_id  :</label>
+        <input type="text" class="form-control" id="per_id" formControlName="per_id" required>
+        <label for="rol_id">  rol_id  :</label>
+        <input type="text" class="form-control" id="rol_id" formControlName="rol_id" required>
+       
+
+    </div>
+      <!-- Otros campos del formulario según tu modelo Jornada -->
+
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+  

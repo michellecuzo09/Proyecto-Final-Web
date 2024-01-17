@@ -29,19 +29,26 @@
         <th>Contraseña</th>
         <th>ID Persona</th>
         <th>ID Rol</th>
+        <th>actualizar</th>
+        <th>eliminar</th>
         <!-- Puedes agregar más columnas según tus necesidades -->
       </tr>
     </thead>
     <tbody>
       <!-- Aquí irán las filas de la tabla con datos de usuarios -->
-      <tr>
-        <td>1</td>
-        <td>Usuario1</td>
-        <td>contraseña1</td>
-        <td>1</td>
-        <td>2</td>
-        <!-- Puedes agregar más celdas con datos de usuarios -->
-      </tr>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.usu_id }}</td>
+        <td>{{ usuario.usu_usuario }}</td>
+        <td>{{ usuario.usu_contrasena }}</td>
+        <td>{{ usuario.per_id }}</td>
+        <td>{{ usuario.rol_id }}</td>
+        <td>
+        <button style="border: none; background: transparent;" (click)="arirModalActualizar(usuario)">
+          <i class="fas fa-pencil-alt"></i>
+        </button> 
+      </td>
+      <td>
+    </tr>
       <!-- Puedes agregar más filas según tus necesidades -->
     </tbody>
   </table>
