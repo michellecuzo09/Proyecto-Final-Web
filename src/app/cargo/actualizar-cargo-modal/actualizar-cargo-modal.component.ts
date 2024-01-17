@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Cargo } from '../cargo';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
@@ -10,7 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './actualizar-cargo-modal.component.html',
   styleUrls: ['./actualizar-cargo-modal.component.css'],
 })
-export class ActualizarCargoModalComponent {
+export class ActualizarCargoModalComponent implements OnInit{
   @Input() cargo: Cargo | undefined;
   cargo_id: number | undefined;
   updateForm!: FormGroup;

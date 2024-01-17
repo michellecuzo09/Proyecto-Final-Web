@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; // Importa el HttpClientModule
+import { ActualizarCargoModalComponent } from './cargo/actualizar-cargo-modal/actualizar-cargo-modal.component';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -54,6 +55,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarGradoComponent } from './grado-ocupacional/listar-grado/listar-grado.component';
 import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-grado-modal/actualizar-grado-modal.component';
+import { ActualizarPersonaModalComponent } from './persona/actualizar-persona-modal/actualizar-persona-modal.component';
+import { ActualizarUsuarioModalComponent } from './usuario/actualizar-usuario-modal/actualizar-usuario-modal.component';
+import { ActualizarRoleComponent } from './roles/actualizar-role-modal/actualizar-role-modal.component';
 
 
 const routes: Routes = [
@@ -117,7 +121,12 @@ const routes: Routes = [
   { path: 'abrirModalActualizar', component: ActividadesDocenteComponent },
   { path: 'listarGrado', component: ListarGradoComponent },
   //
-  {path:'listargrados', component:ListarGradoComponent}
+  {path:'listargrados', component:ListarGradoComponent},
+  {path:'actualizarper', component:ActualizarPersonaModalComponent},
+
+  {path:'actualizarusu', component:ActualizarUsuarioModalComponent},
+  {path:'actualizarrol', component:ActualizarRoleComponent},
+  {path:'actualizacargo', component:ActualizarCargoModalComponent},
 
 ];
 
@@ -166,7 +175,12 @@ const routes: Routes = [
     CreardistributivoComponent,
     ActualizarJornadaModalComponent,
     ActualizarGradoModalComponent,
-    ListarGradoComponent
+    ListarGradoComponent,
+    ActualizarPersonaModalComponent,
+    ActualizarUsuarioModalComponent,
+    ActualizarRoleComponent,
+    ActualizarCargoModalComponent,
+    PersonaComponent,
   ],
 
   imports: [
