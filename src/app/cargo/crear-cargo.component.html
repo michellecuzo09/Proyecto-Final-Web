@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="crear-cargo.component.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="crear-cargo.component.css" />
     <title>Formulario de Cargo</title>
-</head>
-<app-header> </app-header>
-<app-menudesp></app-menudesp>
-<body>
+  </head>
+  <app-header> </app-header>
+  <app-menudesp></app-menudesp>
+  <body>
     <div class="form-container">
-        <h2>Crear Nuevo Cargo</h2>
-        <form id="create-cargo-form">
-            <label for="cargoNombre">Nombre del Cargo:</label>
-            <input type="text" id="cargoNombre" name="cargoNombre" required>
+      <h2>Crear Nuevo Cargo</h2>
+      <form class="formulario" (submit)="crearCargo()">
+        <label for="nombre">Nombre del Cargo:</label>
+        <input
+          type="text"
+          [(ngModel)]="nuevoCargo.cargo_nombre"
+          name="cargo_nombre"
+          required
+        />
 
-            <label for="cargoDescripcion">Descripción del Cargo:</label>
-            <textarea id="cargoDescripcion" name="cargoDescripcion" rows="4" required></textarea>
+        <label for="descripcion">Descripción del Cargo:</label>
+        <textarea
+          [(ngModel)]="nuevoCargo.cargo_descripcion"
+          name="cargo_descripcion"
+          required
+        ></textarea>
 
-            <div class="button-container">
-                <button type="submit" class="create-button">Crear</button>
-                <button  class="cancel-button" routerLink="/cargo">Cancelar</button>
-            </div>
-        </form>
+        <button type="submit" class="btn btn1 btn-primary">
+          <i class="fa fa-check"></i> Registrar
+        </button>
+        <!-- Cambia el tipo de botón de submit a button para evitar enviar el formulario al presionar Cancelar -->
+        <button type="button" class="btn2 btn btn-danger" (click)="cancelar()">
+          <i class="fa fa-times"></i> Cancelar
+        </button>
+      </form>
     </div>
-</body>
-<app-footer></app-footer>
+  </body>
+  <app-footer></app-footer>
 </html>

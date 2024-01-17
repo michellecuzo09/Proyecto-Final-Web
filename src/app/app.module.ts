@@ -54,7 +54,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarGradoComponent } from './grado-ocupacional/listar-grado/listar-grado.component';
 import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-grado-modal/actualizar-grado-modal.component';
-
+import { ActualizarCargoModalComponent } from './cargo/actualizar-cargo-modal/actualizar-cargo-modal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -98,18 +98,27 @@ const routes: Routes = [
   { path: 'actividades-no-docente', component: ActividadesNoDocenteComponent },
   { path: 'extra-actividades', component: ExtraActividadesComponent },
   { path: 'seleccion-actividades', component: SeleccionActividadComponent },
-  { path: 'listar-actividades-docentes', component: ListarActividadesDocentesComponent },
-  { path: 'listar-actividades-no-docentes', component: ListarActividadesNoDocentesComponent },
-  { path: 'listar-extra-actividades', component: ListarExtraActividadesComponent },
+  {
+    path: 'listar-actividades-docentes',
+    component: ListarActividadesDocentesComponent,
+  },
+  {
+    path: 'listar-actividades-no-docentes',
+    component: ListarActividadesNoDocentesComponent,
+  },
+  {
+    path: 'listar-extra-actividades',
+    component: ListarExtraActividadesComponent,
+  },
   { path: 'creardocente', component: CreardocenteComponent },
   { path: 'distributivo', component: DistributivoComponent },
   { path: 'creardistributivo', component: CreardistributivoComponent },
   //
-  {path: 'abrirModalActualizar', component: ActividadesDocenteComponent},
-  {path:'listarGrado', component:ListarGradoComponent},
+  { path: 'abrirModalActualizar', component: ActividadesDocenteComponent },
+  { path: 'listarGrado', component: ListarGradoComponent },
   //
-  {path:'listargrados', component:ListarGradoComponent}
-
+  { path: 'listargrados', component: ListarGradoComponent },
+  { path: 'actualizarcargo', component: ActualizarCargoModalComponent },
 ];
 
 @NgModule({
@@ -158,16 +167,22 @@ const routes: Routes = [
     CreardistributivoComponent,
     ActualizarJornadaModalComponent,
     ActualizarGradoModalComponent,
-    ListarGradoComponent
+    ListarGradoComponent,
+    ActualizarCargoModalComponent,
   ],
 
-  imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 
-    ModalModule.forRoot(), AppRoutingModule, ReactiveFormsModule
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  
-}
-
+export class AppModule {}
