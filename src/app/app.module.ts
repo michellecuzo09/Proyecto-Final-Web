@@ -54,11 +54,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarGradoComponent } from './grado-ocupacional/listar-grado/listar-grado.component';
 import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-grado-modal/actualizar-grado-modal.component';
-import { ActualizarRoleComponent } from './roles/actualizar-role-modal/actualizar-role-modal.component';
-import { ActualizarPersonaModalComponent } from './persona/actualizar-persona-modal/actualizar-persona-modal.component';
-import { Persona } from './persona/persona';
-import { ActualizarUsuarioModalComponent } from './usuario/actualizar-usuario-modal/actualizar-usuario-modal.component';
-import { Usuario } from './usuario/Usuario';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -102,25 +98,26 @@ const routes: Routes = [
   { path: 'actividades-no-docente', component: ActividadesNoDocenteComponent },
   { path: 'extra-actividades', component: ExtraActividadesComponent },
   { path: 'seleccion-actividades', component: SeleccionActividadComponent },
-  { path: 'listar-actividades-docentes', component: ListarActividadesDocentesComponent },
-  { path: 'listar-actividades-no-docentes', component: ListarActividadesNoDocentesComponent },
-  { path: 'listar-extra-actividades', component: ListarExtraActividadesComponent },
+  {
+    path: 'listar-actividades-docentes',
+    component: ListarActividadesDocentesComponent,
+  },
+  {
+    path: 'listar-actividades-no-docentes',
+    component: ListarActividadesNoDocentesComponent,
+  },
+  {
+    path: 'listar-extra-actividades',
+    component: ListarExtraActividadesComponent,
+  },
   { path: 'creardocente', component: CreardocenteComponent },
   { path: 'distributivo', component: DistributivoComponent },
   { path: 'creardistributivo', component: CreardistributivoComponent },
   //
-  {path: 'abrirModalActualizar', component: ActividadesDocenteComponent},
-  {path:'listarGrado', component:ListarGradoComponent},
+  { path: 'abrirModalActualizar', component: ActividadesDocenteComponent },
+  { path: 'listarGrado', component: ListarGradoComponent },
   //
-  {path:'listargrados', component:ListarGradoComponent},
-//
-{path:'actualizarrole', component:ActualizarRoleComponent},
-{path:'persona', component:ActualizarPersonaModalComponent},
-
-{path:'actualizarpersona', component:ActualizarPersonaModalComponent},
-{path:'personam', component:Persona},
-{path:'usuariom', component:Usuario},
-{path:'actualizarusuario', component:ActualizarUsuarioModalComponent},
+  {path:'listargrados', component:ListarGradoComponent}
 
 ];
 
@@ -169,25 +166,21 @@ const routes: Routes = [
     CreardistributivoComponent,
     ActualizarJornadaModalComponent,
     ActualizarGradoModalComponent,
-    ListarGradoComponent,
-    ActualizarRoleComponent,
-    ActualizarPersonaModalComponent,
-    PersonaComponent,
-    ActualizarUsuarioModalComponent,
-    
-
-    
-    
-    
+    ListarGradoComponent
   ],
 
-  imports: [BrowserModule, RouterModule.forRoot(routes),    HttpClientModule, FormsModule, BrowserAnimationsModule,ReactiveFormsModule, 
-    ModalModule.forRoot(), AppRoutingModule, ReactiveFormsModule
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  
-}
-
+export class AppModule {}
