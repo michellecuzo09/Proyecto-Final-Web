@@ -8,6 +8,7 @@ import { Rol } from './roles';
   })
   export class RolesService{
     [x: string]: any;
+    private urlcat = 'http://localhost:8080/categorias';
     private urlEndPoint:string = 'http://localhost:8080/api/roles/listar'
     private urlEndPoint_1:string = 'http://localhost:8080/api/roles/guardar'
     private urlEndPoint_2:string = 'http://localhost:8080/api/roles/eliminar/{{id}}'
@@ -17,6 +18,8 @@ import { Rol } from './roles';
     private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json'});
     
     constructor(private http:HttpClient) {}
+
+    
     getRoles(): Observable<Rol[]> {
    
       return this.http.get<Rol[]>(this.urlEndPoint);

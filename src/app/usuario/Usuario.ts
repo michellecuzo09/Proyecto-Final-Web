@@ -1,9 +1,11 @@
-export class Usuario{
+import { Persona } from "../persona/persona";
+import { Rol } from "../roles/roles";
 
-    'usu_id':number;
+export class Usuario{
+        'usu_id':number;
     'usu_usuario':string;
     'usu_contrasena':string;
-    'per_id':number;
-    'rol_id':number;
+    'persona':Persona;
+    'rol':Rol;
    
     }

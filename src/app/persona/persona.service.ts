@@ -10,7 +10,6 @@ import { Persona } from './persona';
   export class PersonaService{
   [x: string]: any;
   
-
     private urlEndPoint:string = 'http://localhost:8080/api/personas/listar'
     private urlEndPoint_1:string = 'http://localhost:8080/api/personas/guardar'
     private urlEndPoint_2:string = 'http://localhost:8080/api/personas/eliminar/{{id}}'

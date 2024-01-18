@@ -2,30 +2,28 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './Usuario';
+import { Persona } from '../persona/persona';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
   [x: string]: any;
   
-
+  private urlcat = 'http://localhost:8080/personas';
   private urlEndPoint:string = 'http://localhost:8080/api/usuario/listar'
   private urlEndPoint_1:string = 'http://localhost:8080/api/usuario/guardar'
   private urlEndPoint_2:string = 'http://localhost:8080/api/usuario/eliminar/{{id}}'
   private urlEndPoint_3:string = 'http://localhost:8080/api/usuario/actualizar/{{id}}'
   private urlEndPoint_4:string = 'http://localhost:8080/api/usuario/buscar/{{id}}'
 
-  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json'});
-
+ 
   constructor(private http:HttpClient) { }
   getUsuario(): Observable<Usuario[]> {
    
     return this.http.get<Usuario[]>(this.urlEndPoint);
   }
 
-  create(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.urlEndPoint_1, usuario, {headers: this.httpHeaders})
-  }
+  
 
   getUsuarioid(id:number):Observable<Usuario> {
     return this.http.get<Usuario>(`${this.urlEndPoint_1}/${id}`)

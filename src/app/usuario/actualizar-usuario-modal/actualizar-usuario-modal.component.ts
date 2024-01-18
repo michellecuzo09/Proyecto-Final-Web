@@ -39,8 +39,8 @@ export class ActualizarUsuarioModalComponent implements OnInit{
         this.updateForm.patchValue({
           usu_usuario: this.usuario?.usu_usuario,
           usu_contrase:this.usuario?.usu_contrasena,
-          per_id:this.usuario?.per_id,
-          rol_id:this.usuario?.rol_id,
+          per_id:this.usuario?.persona.per_id,
+          rol_id:this.usuario?.rol.rol_id,
           
           // Otros campos según tu modelo Jornada
         });

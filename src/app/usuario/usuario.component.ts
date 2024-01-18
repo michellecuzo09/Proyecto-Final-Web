@@ -6,12 +6,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Usuario } from './Usuario';
 import { ActualizarUsuarioModalComponent } from './actualizar-usuario-modal/actualizar-usuario-modal.component';
+import { Persona } from '../persona/persona';
+import { RolesComponent } from '../roles/roles.component';
+import { PersonaComponent } from '../persona/persona.component';
 @Component({
+  
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.css']
 })
+
 export class UsuarioComponent implements OnInit{
+  persona: PersonaComponent | undefined; 
+  roles:RolesComponent | undefined
+
   [x: string]: any;
   usuarios:Usuario[] = [];
   urlEndPoint_3: any;
