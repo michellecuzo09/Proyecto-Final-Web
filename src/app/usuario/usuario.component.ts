@@ -40,7 +40,7 @@ export class UsuarioComponent implements OnInit{
   
   
       cargarLista(): void {
-        this.UsuarioService.getUsuario().subscribe(
+        this.UsuarioService.getUsuarios().subscribe(
           usuarios => {
             this.usuarios = usuarios;
             this.isLoading = false;

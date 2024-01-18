@@ -58,7 +58,7 @@ export class ActualizarUsuarioModalComponent implements OnInit{
         return;
       }
   
-      this.UsuarioService.updateuSU(updatedUsu).subscribe(
+      this.UsuarioService.updateUsuario(updatedUsu).subscribe(
         data => {
           console.log('persona actualizada con éxito:', data);
           this.modalRef.hide();  // Cierra la ventana desplegable después de la actualización

@@ -20,13 +20,8 @@
 
             <label for="personId">ID Persona:</label>
             <select id="personId" name="personId" required>
-                <!-- Opciones para ID Persona -->
-                <option value="1">Persona 1</option>
-                <option value="2">Persona 2</option>
-                <option value="3">Persona 3</option>
-                <!-- Agrega más opciones según sea necesario -->
+                <option *ngFor="let persona of personas" [value]="persona.id">{{persona.nombre}}</option>
             </select>
-
             <label for="roleId">ID Rol:</label>
             <select id="roleId" name="roleId" required>
                 <!-- Opciones para ID Rol -->

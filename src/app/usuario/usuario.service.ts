@@ -1,40 +1,49 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Usuario } from './Usuario';
 import { Persona } from '../persona/persona';
+
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  [x: string]: any;
-  
-  private urlcat = 'http://localhost:8080/personas';
-  private urlEndPoint:string = 'http://localhost:8080/api/usuario/listar'
-  private urlEndPoint_1:string = 'http://localhost:8080/api/usuario/guardar'
-  private urlEndPoint_2:string = 'http://localhost:8080/api/usuario/eliminar/{{id}}'
-  private urlEndPoint_3:string = 'http://localhost:8080/api/usuario/actualizar/{{id}}'
-  private urlEndPoint_4:string = 'http://localhost:8080/api/usuario/buscar/{{id}}'
+  private urlEndPoint: string = 'http://localhost:8080/api/usuario/listar';
+  private urlEndPoint_1: string = 'http://localhost:8080/api/usuario/guardar';
+  private urlEndPoint_2: string = 'http://localhost:8080/api/usuario/eliminar/{{id}}';
+  private urlEndPoint_3: string = 'http://localhost:8080/api/usuario/actualizar/{{id}}';
+  private urlEndPoint_4: string = 'http://localhost:8080/api/usuario/buscar/{{id}}';
+  private urlPersonas: string = 'http://localhost:8080/personas';
 
- 
-  constructor(private http:HttpClient) { }
-  getUsuario(): Observable<Usuario[]> {
-   
+  personas: Persona[] = [];  // Arreglo para almacenar las personas obtenidas de la API
+
+  constructor(private http: HttpClient) { }
+
+  getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.urlEndPoint);
   }
 
-  
-
-  getUsuarioid(id:number):Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.urlEndPoint_1}/${id}`)
+  getUsuarioid(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.urlEndPoint_1}/${id}`);
   }
+
   deleteUsuario(usu_id: number): Observable<Usuario> {
-    const url = `http://localhost:8080/api/usuario/eliminar/${usu_id}`; // Ajusta la URL según tu estructura
-     return this.http.delete<Usuario>(url);
-}
-updateuSU(usuario: Usuario): Observable<Usuario> {
-  const url = `http://localhost:8080/api/usuario/actualizar/${usuario.usu_id}`;
-  console.log('URL de actualización:', url);
-  return this.http.put<Usuario>(url, usuario);
-}
+    const url = `http://localhost:8080/api/usuario/eliminar/${usu_id}`;
+    return this.http.delete<Usuario>(url);
+  }
+
+  updateUsuario(usuario: Usuario): Observable<Usuario> {
+    const url = `http://localhost:8080/api/usuario/actualizar/${usuario.usu_id}`;
+    return this.http.put<Usuario>(url, usuario);
+  }
+
+  // Obtener personas para cargar en el select
+  getPersonas(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(this.urlPersonas);
+  }
+
+  // Cargar personas al inicializar el componente
+  cargarPersonas() {
+    this.getPersonas().subscribe(personas => this.personas = personas);
+  }
 }
