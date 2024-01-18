@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tipo-contrato.component.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tipo-contrato.component.css" />
     <title>Título</title>
-</head>
-<app-header> </app-header>
-<app-menudesp></app-menudesp>
-<body>
-    
-       
-    
+  </head>
+  <app-header> </app-header>
+  <app-menudesp></app-menudesp>
+  <body>
     <div class="titulo-container">
-      
-        <h2>Lista de tipo contrato</h2>
-          <button  class="crear-button" routerLink="/crearcontrato">crear</button>
+      <h2>Lista de tipo contrato</h2>
+      <button class="crear-button" routerLink="/crearcontrato">crear</button>
 
-        <button class="eliminar-button">Eliminar</button>
-        <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
+      <button class="eliminar-button">Eliminar</button>
+      <input class="buscar" type="buscar" class="box" placeholder="Buscar" />
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Tipo ID</th>
-                    <th>Tipo Contrato</th>
-                    <th>Tipo Horas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aquí irán las filas de la tabla con datos de títulos -->
-                <tr>
-                    <td>1</td>
-                    <td>Contrato A</td>
-                    <td>40</td>
-                   
-                </tr>
-                <!-- Puedes agregar más filas según tus necesidades -->
-            </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo ID</th>
+            <th>Tipo Contrato</th>
+            <th>Tipo Horas</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tipocontrato of tipocontrato">
+            <td>{{ tipocontrato.tipo_id }}</td>
+            <td>{{ tipocontrato.tipo_contrato }}</td>
+            <td>{{ tipocontrato.tipo_horas }}</td>
+            <!-- Agrega más celdas según los atributos de Jornada -->
+            <td>
+              <button
+                style="border: none; background: transparent"
+                (click)="abrirModalActualizar(tipocontrato)"
+              >
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </td>
+            <td>
+              <button
+                style="border: none; background: transparent"
+                (click)="eliminarCargo(tipocontrato.tipo_id)"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</body>
-<app-footer></app-footer>
+  </body>
+  <app-footer></app-footer>
 </html>

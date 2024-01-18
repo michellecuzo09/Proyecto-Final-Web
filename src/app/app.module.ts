@@ -58,7 +58,7 @@ import { ActualizarGradoModalComponent } from './grado-ocupacional/actualizar-gr
 import { ActualizarPersonaModalComponent } from './persona/actualizar-persona-modal/actualizar-persona-modal.component';
 import { ActualizarUsuarioModalComponent } from './usuario/actualizar-usuario-modal/actualizar-usuario-modal.component';
 import { ActualizarRoleComponent } from './roles/actualizar-role-modal/actualizar-role-modal.component';
-
+import { ActualizarTipocontratoModalComponent } from './tipo-contrato/actualizar-tipocontrato-modal/actualizar-tipocontrato-modal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -121,13 +121,16 @@ const routes: Routes = [
   { path: 'abrirModalActualizar', component: ActividadesDocenteComponent },
   { path: 'listarGrado', component: ListarGradoComponent },
   //
-  {path:'listargrados', component:ListarGradoComponent},
-  {path:'actualizarper', component:ActualizarPersonaModalComponent},
+  { path: 'listargrados', component: ListarGradoComponent },
+  { path: 'actualizarper', component: ActualizarPersonaModalComponent },
 
-  {path:'actualizarusu', component:ActualizarUsuarioModalComponent},
-  {path:'actualizarrol', component:ActualizarRoleComponent},
-  {path:'actualizacargo', component:ActualizarCargoModalComponent},
-
+  { path: 'actualizarusu', component: ActualizarUsuarioModalComponent },
+  { path: 'actualizarrol', component: ActualizarRoleComponent },
+  { path: 'actualizacargo', component: ActualizarCargoModalComponent },
+  {
+    path: 'actualizatipocontrato',
+    component: ActualizarTipocontratoModalComponent,
+  },
 ];
 
 @NgModule({
@@ -181,6 +184,7 @@ const routes: Routes = [
     ActualizarRoleComponent,
     ActualizarCargoModalComponent,
     PersonaComponent,
+    ActualizarTipocontratoModalComponent,
   ],
 
   imports: [
