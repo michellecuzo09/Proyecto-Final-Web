@@ -57,4 +57,20 @@ export class ListarGradoComponent implements OnInit {
   
     this.modalRef = this.modalService.show(ActualizarGradoModalComponent, { initialState });
   }
+
+  eliminar(gradoId: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar esta jornada?')) {
+      // Llama al servicio para eliminar la jornada
+      this.Service.deleteGrado(gradoId).subscribe(
+        data => {
+          console.log('Grado eliminada con éxito:', data);
+          // Aquí puedes realizar acciones adicionales después de la eliminación
+        },
+        error => {
+          console.error('Error al eliminar grado ocupacional:', error);
+          // Manejar el error según sea necesario
+        }
+      );
+    }
+  }
 }

@@ -34,7 +34,10 @@
                       <button style="border: none; background: transparent;" (click)="abrirModalActualizar(grado)">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
-                      
+                      <td>
+                        <button style="border: none; background: transparent;" (click)="eliminar(grado.grado_id)">
+                          <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+                        </button>
                      <!--<button class="button2" (click)="['eliminarJornada'](jornada)">Eliminar</button>--> 
                     </td>
                 </tr>

@@ -30,12 +30,12 @@ getgradoid(id:number):Observable<GradoOcupacional> {
 }
 
 
-deleteJornada(grado_id: number): Observable<GradoOcupacional> {
-  const url = `${this.urlEndPoint_2}/${grado_id}`; // Ajusta la URL según tu estructura
+deleteGrado(grado_id: number): Observable<GradoOcupacional> {
+  const url = `http://localhost:8080/api/grado/eliminar/${grado_id}`; // Ajusta la URL según tu estructura
    return this.http.delete<GradoOcupacional>(url);
 }
 
-updateJornada(grado: GradoOcupacional): Observable<GradoOcupacional> {
+updateGrado(grado: GradoOcupacional): Observable<GradoOcupacional> {
   const url = `http://localhost:8080/api/grado/actualizar/${grado.grado_id}`;
   console.log('URL de actualización:', url);
   return this.http.put<GradoOcupacional>(url, grado);
