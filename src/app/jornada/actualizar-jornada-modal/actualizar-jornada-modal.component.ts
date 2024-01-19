@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { JornadaService } from '../jornada.service';
 import { Jornada } from '../jornada';
@@ -25,14 +25,27 @@ export class ActualizarJornadaModalComponent implements OnInit {
 
   createForm() {
     this.updateForm = this.fb.group({
-      jornada_nombre: ['', Validators.required],
-      // Otros campos según tu modelo Jornada
+      jornada_nombre: ['', [Validators.required, this.validarMayusculas()]],
     });
+  }
+
+  validarMayusculas(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value as string;
+
+      if (value && !/^[A-Z][a-z]*$/.test(value))
+      
+      ///^[A-Z][a-z]*$/.test(valor);
+      {
+        return { mayusculas: true };
+      }
+
+      return null;
+    };
   }
 
   loadJornadaDetails() {
     if (this.jornada_Id) {
-      // Asegúrate de que jornada_Id tenga un valor antes de hacer la llamada al servicio
       this.jornadaService.getjornadaid(this.jornada_Id).subscribe(jornada => {
         // Asegúrate de que this.updateForm esté inicializado
         this.updateForm.patchValue({
@@ -61,7 +74,7 @@ export class ActualizarJornadaModalComponent implements OnInit {
         },
         error => {
           console.error('Error al actualizar la jornada:', error);
-      
+  
           if (error instanceof HttpErrorResponse && error.status === 200) {
             console.warn('El servidor respondió con un estado 200 pero el contenido no es JSON válido.');
           } else {
@@ -69,5 +82,9 @@ export class ActualizarJornadaModalComponent implements OnInit {
           }
         }
       );
-  }}
+    } else {
+      // El formulario no es válido, puedes agregar lógica adicional aquí si es necesario
+      console.log('El formulario no es válido, muestra errores o realiza otras acciones.');
+    }
+  }
 }

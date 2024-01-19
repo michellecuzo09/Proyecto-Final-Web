@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-/* Estilos generales */
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -111,14 +111,8 @@ tbody {
   margin-right: 10px; /* Ajusta el margen derecho del campo de entrada */
 }
 
-.btn {
-  width: 80%; /* Ajusta el ancho de los botones */
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
-.btn2 {
-  width: 80%; /* Ajusta el ancho del botón Cancelar */
+.btn, .btn2 {
+  width: 150px; /* Tamaño fijo para los botones, ajusta según tus necesidades */
   padding: 8px;
   margin-bottom: 10px;
 }
@@ -142,3 +136,12 @@ tbody {
   margin-right: 10px; /* Ajusta el margen derecho del campo de entrada */
 }
 
+.mensajes-errores {
+
+  top: 10px;
+  right: 10px;
+  color: #721c24; /* Color de texto rojo oscuro */
+ /* Color de fondo rojo claro */ /* Borde rojo más oscuro para resaltar */
+  border-radius: 6px;
+  padding: 10px; /* Asegura que esté por encima de otros elementos */
+}

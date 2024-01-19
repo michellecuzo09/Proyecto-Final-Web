@@ -1,19 +1,24 @@
 <div class="modal-header">
-    <h4 class="modal-title">Actualizar Jornada</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-      <!-- Campos del formulario -->
-      <div class="form-group">
-        <label for="jornada_nombre">Nombre de la Jornada:</label>
-        <input type="text" class="form-control" id="jornada_nombre" formControlName="jornada_nombre" required>
+  <h4 class="modal-title">Actualizar Jornada</h4>
+  <button type="button" class="close close-btn" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <!-- Campos del formulario -->
+    <div class="form-group">
+      <label for="jornada_nombre">Nombre de la Jornada:</label>
+      <input type="text" class="form-control" id="jornada_nombre" formControlName="jornada_nombre" required>
+      
+      <!-- validarMayusculas -->
+      <div class="mensaje-error" *ngIf="updateForm.get('jornada_nombre')?.hasError('mayusculas')">
+        Solo letras, letra inicial en mayúscula.
       </div>
-      <!-- Otros campos del formulario según tu modelo Jornada -->
+    </div>
 
-      <button type="submit" class="btn btn-primary">Actualizar</button>
-    </form>
-  </div>
-  
+    <div class="d-flex-center">
+      <button type="submit" class="btn btn-primary btn-actualizar">Actualizar</button>
+    </div>
+  </form>
+</div>
