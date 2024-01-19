@@ -7,21 +7,30 @@
     <title>Formulario de Título</title>
 </head>
 <body>
-    <div class="formulario-container">
-        <h2>Formulario de Título</h2>
-        <form id="titulo-form">
-            <label for="idTitulo">ID Título:</label>
-            <input type="text" id="idTitulo" name="idTitulo" required>
-
-            <label for="nombreTitulo">Nombre Título:</label>
-            <input type="text" id="nombreTitulo" name="nombreTitulo" required>
-
-            <div class="acciones-container">
-                <button type="submit" class="crear-button">Crear</button>
-                <button class="cancelar-button" routerLink="/titulo">Cancelar</button>
-
-            </div>
-        </form>
-    </div>
+    <app-header></app-header>
+  <app-menudesp></app-menudesp>
+  <div class="container">
+    <!-- Formulario -->
+    <form class="formulario" (ngSubmit)="creartitulo()">
+      <fieldset>
+        <legend class="titulo_formulario"> crear titulo</legend>
+        <div class="contenedor_formulario">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre titulo:</label>
+            <input type="text" [(ngModel)]="nuevoTitu.titulo_nombre" name="titulo_nombre" required class="form-control">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i> Registrar
+          </button>
+          <!-- Cambia el tipo de botón de submit a button para evitar enviar el formulario al presionar Cancelar -->
+          <button type="button" class="btn btn-danger" (click)="cancelar()">
+            <i class="fa fa-times"></i> Cancelar
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <app-footer></app-footer>
 </body>
 </html>

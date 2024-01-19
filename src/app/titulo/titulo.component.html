@@ -26,17 +26,27 @@
                 <tr>
                     <th>ID Título</th>
                     <th>Nombre Título</th>
+                    <th>actualizar</th>
+                    <th>eliminar</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Aquí irán las filas de la tabla con datos de títulos -->
-                <tr>
-                    <td>1</td>
-                    <td>Título 1</td>
+                <tr *ngFor="let titulo of titulos">
+                    <td>{{ titulo.titulo_id }}</td>
+                    <td>{{ titulo.titulo_nombre}}</td>
+        
                     
-                       
-                    
-                </tr>
+                    <td>
+                      <button style="border: none; background: transparent;" (click)="abrirModalActualizar(titulo)">
+                        <i class="fas fa-pencil-alt"></i>
+                      </button> 
+                    </td>
+                    <td>
+                      <button style="border: none; background: transparent;" (click)="eliminartitulo(titulo.titulo_id)">
+                        <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+                      </button>
+                  </tr>
                 <!-- Puedes agregar más filas según tus necesidades -->
             </tbody>
         </table>
