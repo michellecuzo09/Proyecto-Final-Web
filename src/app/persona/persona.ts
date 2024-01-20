@@ -1,5 +1,4 @@
 export class Persona{
-persona:Persona | undefined
 'per_id':number;
 'per_cedula':string;
 'per_primer_nombre':string;

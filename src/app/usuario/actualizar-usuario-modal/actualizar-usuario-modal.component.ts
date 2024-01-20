@@ -13,7 +13,7 @@ export class ActualizarUsuarioModalComponent implements OnInit{
   @Input() usuario: Usuario | undefined;
   usu_id: number | undefined;
   updateForm!: FormGroup;
-
+usuario1:Usuario[]=[];
   constructor(public modalRef: BsModalRef, private fb: FormBuilder, private UsuarioService: UsuarioService) { }
   ngOnInit() {
     this.createForm();
