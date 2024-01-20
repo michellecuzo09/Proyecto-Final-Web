@@ -15,21 +15,21 @@
 /* Estilo para el cuadro de selección */
 .select-container select {
   width: 100%;
-  padding: 8px; /* Ajusta según sea necesario */
-  font-size: 14px; /* Ajusta según sea necesario */
-  border: 1px solid #ced4da; /* Color del borde */
-  border-radius: 4px; /* Bordes redondeados */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
   box-sizing: border-box;
 }
 
 /* Estilo para las opciones del combobox */
 .select-container select option {
-  font-size: 14px; /* Ajusta según sea necesario */
+  font-size: 14px;
 }
 
 /* Estilo cuando el combobox está enfocado */
 .select-container select:focus {
   outline: none;
-  border-color: #007bff; /* Color del borde cuando está enfocado */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7); /* Sombra cuando está enfocado */
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
 }
