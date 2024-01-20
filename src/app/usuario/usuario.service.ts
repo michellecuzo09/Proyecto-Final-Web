@@ -46,4 +46,5 @@ export class UsuarioService {
   cargarPersonas() {
     this.getPersonas().subscribe(personas => this.personas = personas);
   }
+  
 }
