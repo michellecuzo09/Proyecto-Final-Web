@@ -35,7 +35,7 @@ import { CarreraComponent } from './carrera/carrera.component';
 import { SeleccionActividadComponent } from './seleccion-actividad/seleccion-actividad.component';
 import { AsignaturaComponent } from './asignatura/asignatura.component';
 import { CrearAsignaturaComponent } from './asignatura/crear-asignatura.component';
-
+//vale vrg la vida de programadir
 import { ActividadesDocenteComponent } from './actividades-docente/actividades-docente.component';
 import { ActividadesNoDocenteComponent } from './actividades-no-docente/actividades-no-docente.component';
 import { ExtraActividadesComponent } from './extra-actividades/extra-actividades.component';
