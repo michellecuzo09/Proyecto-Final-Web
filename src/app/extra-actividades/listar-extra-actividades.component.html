@@ -1,7 +1,4 @@
 <div>
-    <app-header></app-header>
-    <app-menudesp></app-menudesp>
-
     <body>
 
         <div class="center-container">
@@ -9,7 +6,6 @@
 
             <div class="inputs">
                 <button routerLink="/extra-actividades">Crear</button>
-                <button>Editar</button>
                 <input type="text" class="box" placeholder="Buscar" />
             </div>
 
@@ -20,21 +16,17 @@
                         <th>Horas Investigación</th>
                         <th>Gestión Académica</th>
                         <th>Horas Gestión Semanal</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Proyecto 1</td>
-                        <td>10</td>
-                        <td>Gestión 1</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>Proyecto 2</td>
-                        <td>8</td>
-                        <td>Gestión 2</td>
-                        <td>3</td>
-                    </tr>
+                    <tr *ngFor="let actividad of actividades">
+                        <td>{{ actividad.extra_nombre_proyecto }}</td>
+                        <td>{{ actividad.extra_horas_investigacion }}</td>
+                        <td>{{ actividad.extra_detalle_hora_gestion_academico }}</td>
+                        <td>{{ actividad.extra_horas_direccion_gestion_investigacion_semanal }}</td>
+                        <td><button (click)="editarActividad(actividad)">Editar</button></td>
+                      </tr>
                 </tbody>
             </table>
 
@@ -42,5 +34,4 @@
         </div>
     </body>
 
-    <app-footer></app-footer>
 </div>

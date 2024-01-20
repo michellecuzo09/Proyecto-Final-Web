@@ -1,12 +1,9 @@
 <div>
-    <app-header></app-header>
-    <app-menudesp></app-menudesp>
-  
     <body>
       <div class="panel">
         <h2 class="txt-2">Actividades Extras Docentes</h2>
   
-        <form>
+        <form (ngSubmit)="crearExtraActividad()">
           <div>
             <label for="nombreProyecto">Nombre Proyecto Vinculación:</label>
             <input type="text" id="nombreProyecto" name="nombreProyecto" required autocomplete="off">
@@ -20,7 +17,7 @@
           <div>
             <label for="gestionAcademica">Gestión Académica:</label>
             <input type="text" id="gestionAcademica" name="gestionAcademica" placeholder="Ingrese Detalles de la Gestión">
-          </div>
+          </div> 
   
           <div>
             <label for="gestionAcademicaSemanal">Gestión Académica Semanal:</label>
@@ -33,7 +30,5 @@
         </form>
       </div>
     </body>
-  
-    <app-footer></app-footer>
   </div>
   
