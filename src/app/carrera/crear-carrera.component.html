@@ -1,27 +1,41 @@
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
 <div>
-    <body>
-      <div class="panel">
-        <h2 class="txt-2">Carreras</h2>
-  
-        <form (submit)="crearCarrera()">
-          <div>
-            <label for="nombreProyecto">Nombre Carrera:</label>
-            <input type="text" id="nombreCarrera" name="nombreCarrera" required autocomplete="off" 
-            [(ngModel)]="actividadEnEdicion.carrera_nombre">
-          </div>
-  
-          <div>
-            <label for="horasInvestigacion">Modalidad:</label>
-            <input type="number" id="Modalidad" name="modalidad" placeholder="Ingrese las modalidad" 
-            [(ngModel)]="actividadEnEdicion.carrera_modalidad">
-          </div>
-  
-          <div>
-            <button type="submit">Enviar</button>
-            <button type="button" class="cancel" routerLink="/listar-carrera">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </body>
-  </div>
-  
+  <body>
+    <div class="panel">
+      <h2 class="txt-2">Carreras</h2>
+
+      <form (submit)="crearCarrera()">
+        <div>
+          <label for="nombreProyecto">Nombre Carrera:</label>
+          <input
+            type="text"
+            id="nombreCarrera"
+            name="nombreCarrera"
+            required
+            autocomplete="off"
+            [(ngModel)]="actividadEnEdicion.carrera_nombre"
+          />
+        </div>
+
+        <div>
+          <label for="horasInvestigacion">Modalidad:</label>
+          <input
+            type="number"
+            id="Modalidad"
+            name="modalidad"
+            placeholder="Ingrese las modalidad"
+            [(ngModel)]="actividadEnEdicion.carrera_modalidad"
+          />
+        </div>
+
+        <div>
+          <button type="submit">Enviar</button>
+          <button type="button" class="cancel" routerLink="/listar-carrera">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</div>

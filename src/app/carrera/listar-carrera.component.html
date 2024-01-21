@@ -1,34 +1,35 @@
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
 <div>
-    <body>
+  <body>
+    <div class="center-container">
+      <p class="txt-2">Listado de Carreras</p>
 
-        <div class="center-container">
-            <p class="txt-2">Listado de Carreras</p>
+      <div class="inputs">
+        <button routerLink="/crear-carrera">Crear</button>
+        <input type="text" class="box" placeholder="Buscar" />
+      </div>
 
-            <div class="inputs">
-                <button routerLink="/crear-carrera">Crear</button>
-                <input type="text" class="box" placeholder="Buscar" />
-            </div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Carrera</th>
-                        <th>Modalidad</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let carrera of carrera">
-                        <td>{{ carrera.carrera_nombre }}</td>
-                        <td>{{ carrera.carrera_modalidad }}</td>
-                        <td><button (click)="editarCarrera(carrera.carrera_id)">Editar</button>
-                        </td>
-                      </tr>
-                </tbody>
-            </table>
-
-
-        </div>
-    </body>
-
+      <table>
+        <thead>
+          <tr>
+            <th>Carrera</th>
+            <th>Modalidad</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carrera of carrera">
+            <td>{{ carrera.carrera_nombre }}</td>
+            <td>{{ carrera.carrera_modalidad }}</td>
+            <td>
+              <button (click)="editarCarrera(carrera.carrera_id)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </div>

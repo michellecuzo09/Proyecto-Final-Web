@@ -1,37 +1,38 @@
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
 <div>
-    <body>
+  <body>
+    <div class="center-container">
+      <p class="txt-2">Listado de Periodos</p>
 
-        <div class="center-container">
-            <p class="txt-2">Listado de Periodos</p>
+      <div class="inputs">
+        <button routerLink="/crear-periodo">Crear</button>
+        <input type="text" class="box" placeholder="Buscar" />
+      </div>
 
-            <div class="inputs">
-                <button routerLink="/crear-periodo">Crear</button>
-                <input type="text" class="box" placeholder="Buscar" />
-            </div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Mes Inicio</th>
-                        <th>Mes fin</th>
-                        <th>Año Inicio</th>
-                        <th>Año Fin</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let periodo of periodo">
-                        <td>{{ periodo.periodo_mes_inicio }}</td>
-                        <td>{{ periodo.periodo_mes_fin }}</td>
-                        <td>{{ periodo.periodo_anio_inicio }}</td>
-                        <td>{{ periodo.periodo_anio_fin }}</td>
-                        <td><button (click)="editarPeriodo(periodo.periodo_id)">Editar</button>
-                        </td>
-                      </tr>
-                </tbody>
-            </table>
-
-
-        </div>
-    </body>
-
+      <table>
+        <thead>
+          <tr>
+            <th>Mes Inicio</th>
+            <th>Mes fin</th>
+            <th>Año Inicio</th>
+            <th>Año Fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let periodo of periodo">
+            <td>{{ periodo.periodo_mes_inicio }}</td>
+            <td>{{ periodo.periodo_mes_fin }}</td>
+            <td>{{ periodo.periodo_anio_inicio }}</td>
+            <td>{{ periodo.periodo_anio_fin }}</td>
+            <td>
+              <button (click)="editarPeriodo(periodo.periodo_id)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </div>
