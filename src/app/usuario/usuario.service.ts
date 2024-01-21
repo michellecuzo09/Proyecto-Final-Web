@@ -10,9 +10,6 @@ import { Persona } from '../persona/persona';
 export class UsuarioService {
   private urlEndPoint: string = 'http://localhost:8080/api/usuario/listar';
   private urlEndPoint_1: string = 'http://localhost:8080/api/usuario/guardar';
-  private urlEndPoint_2: string = 'http://localhost:8080/api/usuario/eliminar/{{id}}';
-  private urlEndPoint_3: string = 'http://localhost:8080/api/usuario/actualizar/{{id}}';
-  private urlEndPoint_4: string = 'http://localhost:8080/api/usuario/buscar/{{id}}';
   private urlPersonas: string = 'http://localhost:8080/personas';
 
   personas: Persona[] = [];  // Arreglo para almacenar las personas obtenidas de la API
