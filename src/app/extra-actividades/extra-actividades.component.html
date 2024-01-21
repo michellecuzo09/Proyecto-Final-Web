@@ -1,34 +1,34 @@
 <div>
-    <body>
-      <div class="panel">
-        <h2 class="txt-2">Actividades Extras Docentes</h2>
-  
-        <form (ngSubmit)="crearExtraActividad()">
-          <div>
-            <label for="nombreProyecto">Nombre Proyecto Vinculación:</label>
-            <input type="text" id="nombreProyecto" name="nombreProyecto" required autocomplete="off">
-          </div>
-  
-          <div>
-            <label for="horasInvestigacion">Horas Investigación:</label>
-            <input type="number" id="horasInvestigacion" name="horasInvestigacion" placeholder="Ingrese las horas de Investigación">
-          </div>
-  
-          <div>
-            <label for="gestionAcademica">Gestión Académica:</label>
-            <input type="text" id="gestionAcademica" name="gestionAcademica" placeholder="Ingrese Detalles de la Gestión">
-          </div> 
-  
-          <div>
-            <label for="gestionAcademicaSemanal">Gestión Académica Semanal:</label>
-            <input type="number" id="gestionAcademicaSemanal" name="gestionAcademicaSemanal" placeholder="Ingrese Horas de Gestión Semanal">
-          </div>
-          <div>
-            <button type="submit">Enviar</button>
-            <button type="button" class="cancel" routerLink="/listar-extra-actividades">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </body>
-  </div>
-  
+  <body>
+    <div class="panel">
+      <h2 class="txt-2">Actividades Extras Docentes</h2>
+
+      <form (submit)="crearExtraActividad()">
+        <div>
+          <label for="nombreProyecto">Nombre Proyecto Vinculación:</label>
+          <input type="text" id="nombreProyecto" name="nombreProyecto" required autocomplete="off" 
+          [(ngModel)]="actividadEnEdicion.extra_nombre_proyecto_investigacion">
+        </div>
+
+        <div>
+          <label for="horasInvestigacion">Horas Investigación:</label>
+          <input type="number" id="horasInvestigacion" name="horasInvestigacion" placeholder="Ingrese las horas de Investigación" [(ngModel)]="actividadEnEdicion.extra_horas_investigacion">
+        </div>
+
+        <div>
+          <label for="gestionAcademica">Gestión Académica:</label>
+          <input type="text" id="gestionAcademica" name="gestionAcademica" placeholder="Ingrese Detalles de la Gestión" [(ngModel)]="actividadEnEdicion.extra_detalle_hora_gestion_academico">
+        </div> 
+
+        <div>
+          <label for="gestionAcademicaSemanal">Gestión Académica Semanal:</label>
+          <input type="number" id="gestionAcademicaSemanal" name="gestionAcademicaSemanal" placeholder="Ingrese Horas de Gestión Semanal" [(ngModel)]="actividadEnEdicion.extra_horas_direccion_gestion_academica_semanal">
+        </div>
+        <div>
+          <button type="submit">Enviar</button>
+          <button type="button" class="cancel" routerLink="/listar-extra-actividades">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</div>

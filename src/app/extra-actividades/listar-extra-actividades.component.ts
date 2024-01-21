@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExtraActividadesService } from './extra-actividades.service';
-import { Router } from '@angular/router';  // Importa el servicio de Router
+import { Router } from '@angular/router';
+import { ExtraActividades } from './extra-actividades';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';  // Importa el servicio de Router
 })
 
 export class ListarExtraActividadesComponent implements OnInit {
-  actividades: any[] = [];
+  actividades: ExtraActividades[] = [];
 
   constructor(private extraActividadesService: ExtraActividadesService, private router: Router) { }
 
@@ -20,7 +21,7 @@ export class ListarExtraActividadesComponent implements OnInit {
 
   cargarActividades() {
     this.extraActividadesService.getAll().subscribe(
-      (data) => {
+      (data: ExtraActividades[]) => {
         this.actividades = data;
       },
       (error) => {
@@ -29,16 +30,14 @@ export class ListarExtraActividadesComponent implements OnInit {
     );
   }
 
-  editarActividad(actividad: any) {
-    // Puedes redirigir a una página de edición con la información de la actividad
-    this.router.navigate(['/editar-extra-actividad', actividad.extra_id]);
+  editarActividad(id: number): void {
+    this.router.navigate(['/extra-actividades'], { queryParams: { editar: id } });
   }
 
   eliminarActividad(id: number) {
     this.extraActividadesService.delete(id).subscribe(
       (response) => {
         console.log('Actividad extra eliminada exitosamente', response);
-        // Recargar la lista después de la eliminación
         this.cargarActividades();
       },
       (error) => {

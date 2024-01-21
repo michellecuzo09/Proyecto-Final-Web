@@ -14,7 +14,6 @@ import { CrearRolComponent } from './roles/crear-rol.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
 import { MenudespComponent } from './menudesp/menudesp.component';
-import { PeriodosComponent } from './periodos/periodos.component';
 import { PersonaComponent } from './persona/persona.component';
 import { CrearPersonaComponent } from './persona/crear-persona.component';
 import { TituloComponent } from './titulo/titulo.component';
@@ -26,22 +25,15 @@ import { CrearGradoOcupacionalComponent } from './grado-ocupacional/crear-grado-
 import { CargoComponent } from './cargo/cargo.component';
 import { CrearCargoComponent } from './cargo/crear-cargo.component';
 import { CrearJornadaComponent } from './jornada/crear-jornada.component';
-import { CrearPeriodoComponent } from './periodos/crear-periodo.component';
 import { ListarJornadaComponent } from './jornada/listar-jornada.component';
 import { ListarCursoComponent } from './listar-curso/listar-curso.component';
 import { CrearCursoComponent } from './listar-curso/crear-curso.component';
-import { CrearCarreraComponent } from './carrera/crear-carrera.component';
-import { CarreraComponent } from './carrera/carrera.component';
 import { SeleccionActividadComponent } from './seleccion-actividad/seleccion-actividad.component';
 import { AsignaturaComponent } from './asignatura/asignatura.component';
 import { CrearAsignaturaComponent } from './asignatura/crear-asignatura.component';
 //vale vrg la vida de programadir
-import { ActividadesDocenteComponent } from './actividades-docente/actividades-docente.component';
 import { ActividadesNoDocenteComponent } from './actividades-no-docente/actividades-no-docente.component';
-import { ExtraActividadesComponent } from './extra-actividades/extra-actividades.component';
-import { ListarActividadesDocentesComponent } from './listar-actividades-docentes/listar-actividades-docentes.component';
 import { ListarActividadesNoDocentesComponent } from './listar-actividades-no-docentes/listar-actividades-no-docentes.component';
-import { ListarExtraActividadesComponent } from './listar-extra-actividades/listar-extra-actividades.component';
 import { DocenteComponent } from './docente/docente.component';
 import { CreardocenteComponent } from './docente/creardocente.component';
 import { DistributivoComponent } from './distributivo/distributivo.component';
@@ -59,6 +51,19 @@ import { ActualizarPersonaModalComponent } from './persona/actualizar-persona-mo
 import { ActualizarUsuarioModalComponent } from './usuario/actualizar-usuario-modal/actualizar-usuario-modal.component';
 import { ActualizarRoleComponent } from './roles/actualizar-role-modal/actualizar-role-modal.component';
 import { ActualizarTipocontratoModalComponent } from './tipo-contrato/actualizar-tipocontrato-modal/actualizar-tipocontrato-modal.component';
+
+//
+import { ExtraActividadesComponent } from './extra-actividades/extra-actividades.component';
+import { ListarExtraActividadesComponent } from './extra-actividades/listar-extra-actividades.component';
+
+import { ListarActividadesDocenteComponent } from './actividades-docente/listar-actividades-docente.component';
+import { ActividadesDocenteComponent } from './actividades-docente/actividades-docente.component';
+
+import { ListarCarreraComponent } from './carrera/listar-carrera.component';
+import { CrearCarreraComponent } from './carrera/crear-carrera.component';
+
+import { CrearPeriodoComponent } from './periodos/crear-periodo.component';
+import { ListarPeriodoComponent } from './periodos/listar-periodo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -78,13 +83,11 @@ const routes: Routes = [
   { path: 'cargo', component: CargoComponent },
   { path: 'crearcargo', component: CrearCargoComponent },
   { path: 'crearjornada', component: CrearJornadaComponent },
-  { path: 'periodo', component: PeriodosComponent },
   { path: 'crearperiodo', component: CrearPeriodoComponent },
   { path: 'listarjornada', component: ListarJornadaComponent },
   { path: 'listarcurso', component: ListarCursoComponent },
   { path: 'crearcurso', component: CrearCursoComponent },
   { path: 'crear-carrera', component: CrearCarreraComponent },
-  { path: 'carrera', component: CarreraComponent },
   {
     path: 'recuperacion-contrasena',
     component: RecuperacionContrasenaComponent,
@@ -98,22 +101,9 @@ const routes: Routes = [
   { path: 'asignatura', component: AsignaturaComponent },
   { path: 'crearasignatura', component: CrearAsignaturaComponent },
 
-  { path: 'actividades-docente', component: ActividadesDocenteComponent },
   { path: 'actividades-no-docente', component: ActividadesNoDocenteComponent },
-  { path: 'extra-actividades', component: ExtraActividadesComponent },
   { path: 'seleccion-actividades', component: SeleccionActividadComponent },
-  {
-    path: 'listar-actividades-docentes',
-    component: ListarActividadesDocentesComponent,
-  },
-  {
-    path: 'listar-actividades-no-docentes',
-    component: ListarActividadesNoDocentesComponent,
-  },
-  {
-    path: 'listar-extra-actividades',
-    component: ListarExtraActividadesComponent,
-  },
+  {path: 'listar-actividades-no-docentes',component: ListarActividadesNoDocentesComponent,},
   { path: 'creardocente', component: CreardocenteComponent },
   { path: 'distributivo', component: DistributivoComponent },
   { path: 'creardistributivo', component: CreardistributivoComponent },
@@ -131,6 +121,20 @@ const routes: Routes = [
     path: 'actualizatipocontrato',
     component: ActualizarTipocontratoModalComponent,
   },
+
+  //
+  {path: 'extra-actividades', component: ExtraActividadesComponent},
+  {path: 'extra-actividades/:id', component: ExtraActividadesComponent},
+  {path: 'listar-extra-actividades', component: ListarExtraActividadesComponent},
+
+  {path: 'actividades-docente', component: ActividadesDocenteComponent},
+  {path: 'listar-actividades-docente', component: ListarActividadesDocenteComponent},
+
+  {path: 'crear-carrera', component: CrearCarreraComponent},
+  {path: 'listar-carrera', component: ListarCarreraComponent},
+
+  {path: 'crear-periodo', component: CrearPeriodoComponent},
+  {path: 'listar-periodo', component: ListarPeriodoComponent},
 ];
 
 @NgModule({
@@ -156,20 +160,15 @@ const routes: Routes = [
     CargoComponent,
     CrearCargoComponent,
     CrearJornadaComponent,
-    PeriodosComponent,
-    CrearPeriodoComponent,
     ListarJornadaComponent,
     ListarCursoComponent,
     CrearCursoComponent,
-    CrearCarreraComponent,
-    CarreraComponent,
     SeleccionActividadComponent,
     AsignaturaComponent,
     CrearAsignaturaComponent,
     ActividadesDocenteComponent,
     ActividadesNoDocenteComponent,
     ExtraActividadesComponent,
-    ListarActividadesDocentesComponent,
     ListarActividadesNoDocentesComponent,
     ListarExtraActividadesComponent,
     DocenteComponent,
@@ -185,6 +184,16 @@ const routes: Routes = [
     ActualizarCargoModalComponent,
     PersonaComponent,
     ActualizarTipocontratoModalComponent,
+
+    //
+    ExtraActividadesComponent,
+    ListarExtraActividadesComponent,
+    ListarActividadesDocenteComponent,
+    ActividadesDocenteComponent,
+    ListarCarreraComponent,
+    CrearCarreraComponent,
+    CrearPeriodoComponent,
+    ListarPeriodoComponent,
   ],
 
   imports: [

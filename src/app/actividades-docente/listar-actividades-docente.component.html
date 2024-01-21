@@ -1,0 +1,38 @@
+<div>
+    <body>
+
+        <div class="center-container">
+            <p class="txt-2">Listado de Actividades Docentes</p>
+
+            <div class="inputs">
+                <button routerLink="/actividades-docente">Crear</button>
+                <input type="text" class="box" placeholder="Buscar" />
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horas Docencia</th>
+                        <th>Nombre Actividad</th>
+                        <th>Asignatura</th>
+                        <th>Actividades Extra Semanal</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let actividad of actividades">
+                        <td>{{ actividad.actividoc_horas_docencia }}</td>
+                        <td>{{ actividad.actividoc_nombre_actividad }}</td>
+                        <td>{{ actividad.asignatura_id }}</td>
+                        <td>{{ actividad.extra_id}}</td>
+                        <td><button (click)="editarActividad(actividad.extra_id)">Editar</button>
+                        </td>
+                      </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </body>
+
+</div>
