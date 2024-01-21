@@ -14,10 +14,15 @@
         <input type="text" class="form-control" id="usu_usuario" formControlName="usu_usuario"required>
         <label for="usu_contrasena"> contrasena  :</label>
         <input type="text" class="form-control" id="usu_contrasena" formControlName="usu_contrasena" required>
-        <label for="per_id">  per_id  :</label>
-        <input type="text" class="form-control" id="per_id" formControlName="per_id" required>
-        <label for="rol_id">  rol_id  :</label>
-        <input type="text" class="form-control" id="rol_id" formControlName="rol_id" required>
+      <label for="per_id"> per_id :</label>
+  <select class="form-control" id="per_id" formControlName="per_id" required>
+    <option *ngFor="let usuario of  usuario1" [value]="usuario.persona.per_id"> {{ usuario.persona.per_id }}</option>
+  </select>
+
+  <label for="rol_id"> rol_id :</label>
+  <select class="form-control" id="rol_id" formControlName="rol_id" required>
+    <option *ngFor="let  usuario of  usuario1" [value]="usuario.rol.rol_id">{{ usuario.rol.rol_id }}</option>
+  </select>
        
 
     </div>

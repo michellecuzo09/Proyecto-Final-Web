@@ -1,35 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="crear-periodo.component.css">
-    <title>Formulario de Período</title>
-</head>
 <app-header> </app-header>
 <app-menudesp></app-menudesp>
-<body>
-    <div class="form-container">
-        <h2>Crear Nuevo Período</h2>
-        <form id="create-periodo-form">
-            <label for="mesInicio">Mes de Inicio:</label>
-            <input type="text" id="mesInicio" name="mesInicio" required>
+<div>
+  <body>
+    <div class="panel">
+      <h2 class="txt-2">Carreras</h2>
 
-            <label for="mesFin">Mes de Fin:</label>
-            <input type="text" id="mesFin" name="mesFin" required>
+      <form (submit)="crearPeriodo()">
+        <div>
+          <label for="mesInicio">Mes Inicio:</label>
+          <input
+            type="text"
+            id="mesInicio"
+            name="mesinicio"
+            required
+            autocomplete="off"
+            [(ngModel)]="periodoEdicion.periodo_mes_inicio"
+          />
+        </div>
 
-            <label for="anoInicio">Año de Inicio:</label>
-            <input type="text" id="anoInicio" name="anoInicio" required>
+        <div>
+          <label for="mesFin">Mes Fin:</label>
+          <input
+            type="number"
+            id="mesFin"
+            name="mesfin"
+            placeholder="Ingrese las modalidad"
+            [(ngModel)]="periodoEdicion.periodo_mes_fin"
+          />
+        </div>
 
-            <label for="anoFin">Año de Fin:</label>
-            <input type="text" id="anoFin" name="anoFin" required>
+        <div>
+          <label for="añoInicio">Año Inicio:</label>
+          <input type="text" [(ngModel)]="periodoEdicion.periodo_anio_inicio" />
+        </div>
 
-            <div class="button-container">
-                <button type="submit" class="create-button">Crear</button>
-                <button  class="cancel-button" routerLink="/periodo">Cancelar</button>
-            </div>
-        </form>
+        <div>
+          <label for="añoFin">Año Fin:</label>
+          <input type="text" [(ngModel)]="periodoEdicion.periodo_anio_fin" />
+        </div>
+
+        <div>
+          <button type="submit">Enviar</button>
+          <button type="button" class="cancel" routerLink="/listar-periodo">
+            Cancelar
+          </button>
+        </div>
+      </form>
     </div>
-</body>
-<app-footer></app-footer>
-</html>
+  </body>
+</div>

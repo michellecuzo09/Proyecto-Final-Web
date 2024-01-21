@@ -1,0 +1,41 @@
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<div>
+  <body>
+    <div class="center-container">
+      <p class="txt-2">Listado de Actividades Extras</p>
+
+      <div class="inputs">
+        <button routerLink="/extra-actividades">Crear</button>
+        <input type="text" class="box" placeholder="Buscar" />
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre Proyecto Vinculación</th>
+            <th>Horas Investigación</th>
+            <th>Gestión Académica</th>
+            <th>Horas Gestión Semanal</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let actividad of actividades">
+            <td>{{ actividad.extra_nombre_proyecto_investigacion }}</td>
+            <td>{{ actividad.extra_horas_investigacion }}</td>
+            <td>{{ actividad.extra_detalle_hora_gestion_academico }}</td>
+            <td>
+              {{ actividad.extra_horas_direccion_gestion_academica_semanal }}
+            </td>
+            <td>
+              <button (click)="editarActividad(actividad.extra_id)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</div>

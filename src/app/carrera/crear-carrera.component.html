@@ -1,35 +1,41 @@
-<app-header></app-header>
-    <app-menudesp></app-menudesp>
-<body>
+<app-header> </app-header>
+<app-menudesp></app-menudesp>
+<div>
+  <body>
     <div class="panel">
-        <p class="txt-2">Panel Crear Carrera</p>
+      <h2 class="txt-2">Carreras</h2>
 
-        <div class="input-container">
-            <input type="text" class="box" placeholder="Nombre de la Carrera" />
+      <form (submit)="crearCarrera()">
+        <div>
+          <label for="nombreProyecto">Nombre Carrera:</label>
+          <input
+            type="text"
+            id="nombreCarrera"
+            name="nombreCarrera"
+            required
+            autocomplete="off"
+            [(ngModel)]="actividadEnEdicion.carrera_nombre"
+          />
         </div>
 
-        <div class="input-container input-arrow">
-            <label for="modalidad" class="dropdown-btn">Seleccione Modalidad</label>
-            <div id="modalidadDropdown" class="dropdown-content">
-                <option value="modalidad1">Modalidad 1</option>
-            </div>
+        <div>
+          <label for="horasInvestigacion">Modalidad:</label>
+          <input
+            type="number"
+            id="Modalidad"
+            name="modalidad"
+            placeholder="Ingrese las modalidad"
+            [(ngModel)]="actividadEnEdicion.carrera_modalidad"
+          />
         </div>
-        <div class="input-container input-arrow">
-            <label for="curso" class="dropdown-btn">Seleccione un Curso</label>
-            <div id="cursoDropdown" class="dropdown-content">
-                <option value="curso1">Curso 1</option>
-            </div>
+
+        <div>
+          <button type="submit">Enviar</button>
+          <button type="button" class="cancel" routerLink="/listar-carrera">
+            Cancelar
+          </button>
         </div>
-        <div class="input-container input-arrow">
-            <label for="jornada" class="dropdown-btn">Seleccione Jornada</label>
-            <div id="jornadaDropdown" class="dropdown-content">
-                <option value="jornada1">Jornada 1</option>
-            </div>
-        </div>
-        <div class="buttons">
-            <button id="crear-materia">Crear Carrera</button>
-            <button routerLink="/carrera" id="cancelar">Cancelar</button>
-        </div>
+      </form>
     </div>
-</body>
-<app-footer></app-footer>
+  </body>
+</div>
