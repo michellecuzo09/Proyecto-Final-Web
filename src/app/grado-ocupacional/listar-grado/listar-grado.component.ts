@@ -3,6 +3,9 @@ import { GradoOcupacional } from '../grado-ocupacional';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { GradoOcupacionalService } from '../grado-ocupacional.service';
 import { ActualizarGradoModalComponent } from '../actualizar-grado-modal/actualizar-grado-modal.component';
+//import Swal from 'sweetalert2';
+import { AlertService } from 'src/app/service/Alert.service';
+
 
 @Component({
   selector: 'app-listar-grado',
@@ -19,7 +22,11 @@ export class ListarGradoComponent implements OnInit {
   modalRef: BsModalRef | undefined ;
   grado: GradoOcupacional | undefined;
 
-  constructor(private Service: GradoOcupacionalService, private modalService: BsModalService ) {}
+  constructor(
+    private Service: GradoOcupacionalService, 
+    private modalService: BsModalService,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.cargarLista();
@@ -58,19 +65,50 @@ export class ListarGradoComponent implements OnInit {
     this.modalRef = this.modalService.show(ActualizarGradoModalComponent, { initialState });
   }
 
+  // eliminar(gradoId: number): void {
+  //   if (confirm('¿Estás seguro de que deseas eliminar esta jornada?')) {
+  //     // Llama al servicio para eliminar la jornada
+  //     this.Service.deleteGrado(gradoId).subscribe(
+  //       data => {
+  //         console.log('Grado eliminada con éxito:', data);
+  //         // Aquí puedes realizar acciones adicionales después de la eliminación
+  //       },
+  //       error => {
+  //         console.error('Error al eliminar grado ocupacional:', error);
+  //         // Manejar el error según sea necesario
+  //       }
+  //     );
+  //   }
+  // }
+
   eliminar(gradoId: number): void {
-    if (confirm('¿Estás seguro de que deseas eliminar esta jornada?')) {
-      // Llama al servicio para eliminar la jornada
-      this.Service.deleteGrado(gradoId).subscribe(
-        data => {
-          console.log('Grado eliminada con éxito:', data);
-          // Aquí puedes realizar acciones adicionales después de la eliminación
-        },
-        error => {
-          console.error('Error al eliminar grado ocupacional:', error);
-          // Manejar el error según sea necesario
+    this.alertService
+      .question(
+        '¿Está seguro que desea eliminar?',
+        '',
+        true,
+        true,
+        'Sí, eliminar',
+        'Cancelar',
+        'assets/icons/exclamation.png'
+      )
+      .then((result) => {
+        if (result) {
+          // Llama al servicio para eliminar el grado ocupacional
+          this.Service.deleteGrado(gradoId).subscribe(
+            () => {
+              this.alertService.notification(
+                `Grado Ocupacional Eliminado: ${this.grado?.grado_titulo}`,
+                'success'
+              );
+              this.cargarLista(); // Actualizar la lista después de eliminar
+            },
+            (error) => {
+              console.error('Error al eliminar grado ocupacional:', error);
+            }
+          );
         }
-      );
-    }
+      });
   }
+  
 }
