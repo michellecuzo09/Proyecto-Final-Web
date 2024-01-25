@@ -5,6 +5,7 @@ import { JornadaService } from '../jornada.service';
 import { Jornada } from '../jornada';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/service/Alert.service';
 
 @Component({
   selector: 'app-actualizar-jornada-modal',
@@ -17,7 +18,7 @@ export class ActualizarJornadaModalComponent implements OnInit {
   @Output() jornadaActualizada = new EventEmitter<void>();
   updateForm!: FormGroup;
 
-  constructor(public modalRef: BsModalRef, private fb: FormBuilder, private jornadaService: JornadaService, private router: Router) { }
+  constructor(public modalRef: BsModalRef, private fb: FormBuilder, private jornadaService: JornadaService, private router: Router, private alertService: AlertService) { }
 
   ngOnInit() {
     this.createForm();
@@ -48,6 +49,50 @@ export class ActualizarJornadaModalComponent implements OnInit {
     }
   }
 
+  // onSubmit() {
+  //   if (this.updateForm && this.updateForm.valid) {
+  //     const updatedJornada = this.updateForm.value;
+  //     if (!this.jornada) {
+  //       console.error('Error: No se ha proporcionado una jornada para actualizar.');
+  //       return;
+  //     }
+  //     updatedJornada.jornada_id = this.jornada.jornada_id || 0;
+  
+  //     if (!updatedJornada.jornada_id) {
+  //       console.error('Error: ID de jornada no válido');
+  //       return;
+  //     }
+  
+  //     this.jornadaService.updateJornada(updatedJornada).subscribe(
+  //       data => {
+  //         console.log('Jornada actualizada con éxito:', data);
+  //         this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
+  //         this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
+  //         // Mostrar el mensaje de éxito al usuario
+  //         alert('Jornada actualizada exitosamente');
+  //         this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
+  //       },
+  //       error => {
+  //         console.error('Error al actualizar la jornada:', error);
+  //         if (error instanceof HttpErrorResponse && error.status === 200) {
+  //           console.warn('El servidor respondió con un estado 200 pero el contenido no es JSON válido.');
+  //           // Mostrar el mensaje de éxito al usuario
+  //           this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
+  //           this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
+  //           this.jornadaActualizada.emit();
+  //           this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
+
+  //           alert('Jornada actualizada exitosamente');
+  //         } else {
+  //           // Manejar otros tipos de errores
+  //         }
+  //       }
+  //     );
+  //   } else {
+  //     console.log('El formulario no es válido, muestra errores o realiza otras acciones.');
+  //   }
+  // }
+
   onSubmit() {
     if (this.updateForm && this.updateForm.valid) {
       const updatedJornada = this.updateForm.value;
@@ -62,33 +107,48 @@ export class ActualizarJornadaModalComponent implements OnInit {
         return;
       }
   
-      this.jornadaService.updateJornada(updatedJornada).subscribe(
-        data => {
-          console.log('Jornada actualizada con éxito:', data);
-          this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
-          this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
-          // Mostrar el mensaje de éxito al usuario
-          alert('Jornada actualizada exitosamente');
-          this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
-        },
-        error => {
-          console.error('Error al actualizar la jornada:', error);
-          if (error instanceof HttpErrorResponse && error.status === 200) {
-            console.warn('El servidor respondió con un estado 200 pero el contenido no es JSON válido.');
-            // Mostrar el mensaje de éxito al usuario
-            this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
-            this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
-            this.jornadaActualizada.emit();
-            this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
-
-            alert('Jornada actualizada exitosamente');
-          } else {
-            // Manejar otros tipos de errores
-          }
+      this.alertService.question(
+        'Confirmar Actualización',
+        '¿Está seguro de que desea actualizar esta jornada?',
+        true, // Mostrar botón de confirmación
+        true, // Mostrar botón de cancelar
+        'Confirmar', // Texto del botón de confirmación
+        'Cancelar', // Texto del botón de cancelar
+        'assets/icons/actualizar.png'
+      ).then((result) => {
+        if (result) {
+          // Si se confirma la pregunta, realizar la solicitud HTTP para actualizar la jornada
+          this.jornadaService.updateJornada(updatedJornada).subscribe(
+            data => {
+              console.log('Jornada actualizada con éxito:', data);
+              this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
+              this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
+              // Mostrar el mensaje de éxito al usuario
+              alert('Jornada actualizada exitosamente');
+              this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
+            },
+            error => {
+              console.error('Error al actualizar la jornada:', error);
+              if (error instanceof HttpErrorResponse && error.status === 200) {
+                console.warn('El servidor respondió con un estado 200 pero el contenido no es JSON válido.');
+                // Mostrar el mensaje de éxito al usuario
+                this.modalRef.hide(); // Cierra la ventana modal después de actualizar la jornada
+                this.jornadaActualizada.emit(); // Emitir evento de jornada actualizada
+                this.router.navigate(['/actualizar-jornada']); // Ruta de la misma página
+                alert('Jornada actualizada exitosamente');
+              } else {
+                // Manejar otros tipos de errores
+              }
+            }
+          );
+        } else {
+          // Si se cancela la pregunta, no realizar ninguna acción adicional
+          console.log('Actualización de jornada cancelada.');
         }
-      );
+      });
     } else {
       console.log('El formulario no es válido, muestra errores o realiza otras acciones.');
     }
   }
+  
 }
