@@ -3,9 +3,13 @@ import { GradoOcupacional } from '../grado-ocupacional';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { GradoOcupacionalService } from '../grado-ocupacional.service';
 import { ActualizarGradoModalComponent } from '../actualizar-grado-modal/actualizar-grado-modal.component';
+<<<<<<< Updated upstream
 //import Swal from 'sweetalert2';
 import { AlertService } from 'src/app/service/Alert.service';
 
+=======
+import Swal from 'sweetalert2';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-listar-grado',
@@ -82,6 +86,7 @@ export class ListarGradoComponent implements OnInit {
   // }
 
   eliminar(gradoId: number): void {
+<<<<<<< Updated upstream
     this.alertService
       .question(
         '¿Está seguro que desea eliminar?',
@@ -109,6 +114,31 @@ export class ListarGradoComponent implements OnInit {
           );
         }
       });
+=======
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Llama al servicio para eliminar el grado ocupacional
+        this.Service.deleteGrado(gradoId).subscribe(
+          () => {
+            Swal.fire('Grado Ocupacional Eliminado', `Cliente ${this.grado?.grado_titulo} eliminado con éxito`,'success');
+          },
+          (error) => {
+            console.error('Error al eliminar grado ocupacional:', error);
+            
+          }
+        );
+      }
+    });
+>>>>>>> Stashed changes
   }
   
 }
